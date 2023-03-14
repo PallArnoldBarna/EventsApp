@@ -7,14 +7,21 @@
 
 import SwiftUI
 
-struct GeometryReaderCentered: View {
+struct GeometryReaderCentered<Content: View>: View {
+    var content: (GeometryProxy) -> Content
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            Group {
+                content(geometry)
+            }
+            .frame(
+                width: geometry.size.width,
+                height: geometry.size.height,
+                alignment: .center
+            )
+        }
     }
 }
 
-struct GeometryReaderCentered_Previews: PreviewProvider {
-    static var previews: some View {
-        GeometryReaderCentered()
-    }
-}
+
