@@ -9,9 +9,8 @@ import SwiftUI
 
 struct HomePageView: View {
     @EnvironmentObject var viewModel: AppViewModel
-    @State private var showAlert = false
-    @State private var darkMode = false
     @State private var showSideMenu = false
+    @AppStorage("key") var darkMode: Bool = false
     var body: some View {
         
         ZStack(alignment: .leading) {
@@ -40,22 +39,7 @@ struct HomePageView: View {
                     Spacer()
                     
                     Text("You are logged in")
-                    
-                    Button(action: {
-                        self.showAlert.toggle()
-                        
-                    }, label: {
-                        Text("Sign out")
-                            .frame(width: 200, height: 50)
-                    })
-                    .modifier(ButtonModifier())
-                    .padding()
-                    .alert(isPresented: $showAlert) {
-                        return Alert(title: Text("Sign out"), message: Text("Do you want to sign out?"), primaryButton: .destructive(Text("Sign out")) {
-                            viewModel.signOut()
-                        }, secondaryButton: .cancel(Text("Cancel")))
-                    }
-                    
+
                     Spacer()
                 }
                 

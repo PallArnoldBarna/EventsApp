@@ -10,6 +10,8 @@ import SwiftUI
 struct SideMenuView: View {
     @Binding var darkMode: Bool
     @Binding var showSideMenu: Bool
+    @AppStorage("Dark/Light Mode") private var darkModeValue: Bool = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -18,7 +20,7 @@ struct SideMenuView: View {
                         self.showSideMenu.toggle()
                     }
                 }, label: {
-                    Image(systemName: "chevron.backward")
+                    Image(systemName: "xmark")
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(.primary)
@@ -44,18 +46,59 @@ struct SideMenuView: View {
             
             Text("User")
                 .font(.system(size: 30))
+                .padding(.bottom, 50)
             
             Toggle(isOn: $darkMode, label: {
                 HStack {
                     Image(systemName: "moon.fill")
+                        .frame(width: 25, height: 25)
                         .font(.title)
                     
                     Text("Dark Mode")
+                        .padding(.leading, 12)
                 }
             })
             .onChange(of: darkMode) { _ in
-                UIApplication.shared.windows.first?.rootViewController?.view.overrideUserInterfaceStyle = self.darkMode ? .dark : .light
+                darkModeValue = darkMode
+                if let window = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?.windows.first {
+                    window.rootViewController?.view.overrideUserInterfaceStyle = self.darkModeValue ? .dark : .light
+                }
             }
+            
+            NavigationLink(destination: SettingsPageView()) {
+                HStack(spacing: 22) {
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                    
+                    Text("Settings")
+                }
+                Spacer()
+            }
+            .simultaneousGesture(TapGesture().onEnded{
+                withAnimation(.default) {
+                    self.showSideMenu.toggle()
+                }
+            })
+            .padding(.top, 25)
+            
+            NavigationLink(destination: FavouriteEventsPageView()) {
+                HStack(spacing: 22) {
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                    
+                    Text("Favourites")
+                }
+                Spacer()
+            }
+            .simultaneousGesture(TapGesture().onEnded{
+                withAnimation(.default) {
+                    self.showSideMenu.toggle()
+                }
+            })
+            .padding(.top, 25)
+            
             
             Spacer()
         }

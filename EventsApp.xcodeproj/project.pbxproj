@@ -18,6 +18,8 @@
 		182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754D29BDFCC500D0F751 /* ButtonModifier.swift */; };
 		182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754F29BE3A2100D0F751 /* SideMenuView.swift */; };
 		182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */; };
+		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
+		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
 		34A73B0F5703D1AC0B34E342 /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA926CF210F780CC603A4A7 /* Pods_EventsApp.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		182F754D29BDFCC500D0F751 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		182F754F29BE3A2100D0F751 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderCentered.swift; sourceTree = "<group>"; };
+		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
+		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AB48A04E0D8CDCE6CE729BE /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
 		829A05385C3B018768CC0914 /* Pods-EventsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.debug.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				182F754D29BDFCC500D0F751 /* ButtonModifier.swift */,
 				182F754F29BE3A2100D0F751 /* SideMenuView.swift */,
 				182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */,
+				189B29B929C78D8200EA95F9 /* SettingsPageView.swift */,
+				186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 				182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */,
 				182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */,
 				182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */,
+				189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */,
+				186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */,
 				182F754629BD02D700D0F751 /* LogInPageView.swift in Sources */,
 				182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
