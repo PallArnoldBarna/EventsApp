@@ -10,6 +10,7 @@ import SwiftUI
 struct FavouriteEventsPageView: View {
     var body: some View {
         Text("Favourites page")
+            .navigationTitle("Home")
     }
 }
 

@@ -23,6 +23,7 @@ struct ContentView: View {
         }
         .onAppear {
             viewModel.loggedIn = viewModel.isLoggedIn
+            viewModel.getUsername()
         }
     }
 }

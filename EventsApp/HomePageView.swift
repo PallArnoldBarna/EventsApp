@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import ExytePopupView
 
 struct HomePageView: View {
     @EnvironmentObject var viewModel: AppViewModel
     @State private var showSideMenu = false
     @AppStorage("key") var darkMode: Bool = false
+    @State private var showingPopup = false
+    @State private var isDataLoaded = true
+
     var body: some View {
         
         ZStack(alignment: .leading) {
@@ -31,16 +35,57 @@ struct HomePageView: View {
                             Spacer()
                         }
                         Text("Home")
+                            .font(.headline)
                     }
                     .padding()
                     .foregroundColor(.primary)
-                    .overlay(Rectangle().stroke(Color.primary.opacity(0.1), lineWidth: 1).shadow(radius: 3).edgesIgnoringSafeArea(.top))
-                    
-                    Spacer()
-                    
-                    Text("You are logged in")
 
                     Spacer()
+                    if isDataLoaded {
+                        ProgressView()
+                    } else {
+                        Text("You are logged in, \(viewModel.username)")
+                    }
+                    VStack {
+                        HStack {
+                            NavigationLink(destination: FavouriteEventsPageView()) {
+                                CardView(cardWidth: 210, cardHeight: 210, cardColor: .red, vStackSpacing: 25, cardImageString: "globe", cardImageWidth: 75, cardImageHeight: 75, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            }
+                            
+                            VStack(spacing: 10) {
+                                CardView(cardWidth: 100, cardHeight: 100, cardColor: .blue, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                                CardView(cardWidth: 100, cardHeight: 100, cardColor: .yellow, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            }
+                        }
+                        HStack(spacing: 10) {
+                            CardView(cardWidth: 100, cardHeight: 100, cardColor: .orange, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            
+                            CardView(cardWidth: 100, cardHeight: 100, cardColor: .green, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            
+                            CardView(cardWidth: 100, cardHeight: 100, cardColor: .purple, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                        }
+                    }
+                    
+                    Spacer()
+                    Button(action: {
+                        self.showingPopup.toggle()
+                    }, label: {
+                        Text("button")
+                    })
+                    .popup(isPresented: $showingPopup) {
+                        Text("The popup")
+                            .foregroundColor(.white)
+                            .frame(width: 300, height: 60)
+                            .background(.green)
+                            .cornerRadius(10)
+                            .padding(.bottom, 30)
+                    } customize: {
+                        $0.autohideIn(2)
+                            .type(.toast)
+                            .position(.bottom)
+                            .animation(.spring())
+                            .closeOnTapOutside(true)
+                    }
                 }
                 
             }
@@ -55,6 +100,12 @@ struct HomePageView: View {
             .background(Color.primary.opacity(self.showSideMenu ? (self.darkMode ? 0.05 : 0.2) : 0).edgesIgnoringSafeArea(.all))
             
                 
+        }
+        .onAppear {
+            viewModel.getUsername()
+            DispatchQueue.main.async {
+                self.isDataLoaded = false
+            }
         }
     }
 }

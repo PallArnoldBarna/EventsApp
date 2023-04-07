@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182E359B29CB81CE00360734 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E359A29CB81CE00360734 /* User.swift */; };
+		182E359D29CB82A200360734 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E359C29CB82A200360734 /* Event.swift */; };
+		182E359F29CB847100360734 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E359E29CB847100360734 /* Extensions.swift */; };
+		182E35A129CB884700360734 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E35A029CB884700360734 /* CardView.swift */; };
 		182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F753729BB881200D0F751 /* EventsAppApp.swift */; };
 		182F753A29BB881200D0F751 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F753929BB881200D0F751 /* ContentView.swift */; };
 		182F753C29BB881400D0F751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182F753B29BB881400D0F751 /* Assets.xcassets */; };
@@ -21,10 +25,15 @@
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
-		34A73B0F5703D1AC0B34E342 /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA926CF210F780CC603A4A7 /* Pods_EventsApp.framework */; };
+		18D18A2829D8A1E9000D6CBB /* AdminPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */; };
+		64F5C44225AEA9B6D886E633 /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2145C779786E6190E8AD2136 /* Pods_EventsApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182E359A29CB81CE00360734 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		182E359C29CB82A200360734 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		182E359E29CB847100360734 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		182E35A029CB884700360734 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		182F753429BB881200D0F751 /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182F753729BB881200D0F751 /* EventsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAppApp.swift; sourceTree = "<group>"; };
 		182F753929BB881200D0F751 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,9 +49,10 @@
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6AB48A04E0D8CDCE6CE729BE /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
-		829A05385C3B018768CC0914 /* Pods-EventsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.debug.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.debug.xcconfig"; sourceTree = "<group>"; };
-		AFA926CF210F780CC603A4A7 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPageView.swift; sourceTree = "<group>"; };
+		2145C779786E6190E8AD2136 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2249AE578492F64D0F1EB4EB /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
+		95B2B75BBE7FD74A0F7B15BB /* Pods-EventsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.debug.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,28 +60,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A73B0F5703D1AC0B34E342 /* Pods_EventsApp.framework in Frameworks */,
+				64F5C44225AEA9B6D886E633 /* Pods_EventsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		116CC7E5C3CB60971D4EFF0F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AFA926CF210F780CC603A4A7 /* Pods_EventsApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		182F752B29BB881200D0F751 = {
 			isa = PBXGroup;
 			children = (
 				182F753629BB881200D0F751 /* EventsApp */,
 				182F753529BB881200D0F751 /* Products */,
 				A70F1DB39A8638AB6E040095 /* Pods */,
-				116CC7E5C3CB60971D4EFF0F /* Frameworks */,
+				76FCC8CFAC014D40B4BD1976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +88,10 @@
 		182F753629BB881200D0F751 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				182F754929BD039600D0F751 /* AppViewModel.swift */,
+				18A6C8C629E076850086B535 /* ViewModel */,
+				18A6C8C529E0767D0086B535 /* View */,
+				18A6C8C429E076740086B535 /* Model */,
 				182F753729BB881200D0F751 /* EventsAppApp.swift */,
 				182F753929BB881200D0F751 /* ContentView.swift */,
 				182F753B29BB881400D0F751 /* Assets.xcassets */,
@@ -93,13 +99,17 @@
 				182F753D29BB881400D0F751 /* Preview Content */,
 				182F754529BD02D700D0F751 /* LogInPageView.swift */,
 				182F754729BD031F00D0F751 /* SignUpPageView.swift */,
-				182F754929BD039600D0F751 /* AppViewModel.swift */,
 				182F754B29BD03E000D0F751 /* HomePageView.swift */,
 				182F754D29BDFCC500D0F751 /* ButtonModifier.swift */,
 				182F754F29BE3A2100D0F751 /* SideMenuView.swift */,
 				182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */,
 				189B29B929C78D8200EA95F9 /* SettingsPageView.swift */,
 				186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */,
+				182E359A29CB81CE00360734 /* User.swift */,
+				182E359C29CB82A200360734 /* Event.swift */,
+				182E359E29CB847100360734 /* Extensions.swift */,
+				182E35A029CB884700360734 /* CardView.swift */,
+				18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -112,11 +122,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		18A6C8C429E076740086B535 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18A6C8C529E0767D0086B535 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18A6C8C629E076850086B535 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		76FCC8CFAC014D40B4BD1976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2145C779786E6190E8AD2136 /* Pods_EventsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A70F1DB39A8638AB6E040095 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				829A05385C3B018768CC0914 /* Pods-EventsApp.debug.xcconfig */,
-				6AB48A04E0D8CDCE6CE729BE /* Pods-EventsApp.release.xcconfig */,
+				95B2B75BBE7FD74A0F7B15BB /* Pods-EventsApp.debug.xcconfig */,
+				2249AE578492F64D0F1EB4EB /* Pods-EventsApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -128,11 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 182F754229BB881400D0F751 /* Build configuration list for PBXNativeTarget "EventsApp" */;
 			buildPhases = (
-				B7D98EB671C21D47E2425196 /* [CP] Check Pods Manifest.lock */,
+				0D354088345D2DCB89E9A851 /* [CP] Check Pods Manifest.lock */,
 				182F753029BB881200D0F751 /* Sources */,
 				182F753129BB881200D0F751 /* Frameworks */,
 				182F753229BB881200D0F751 /* Resources */,
-				9427F68ED3DB13D12D5286FC /* [CP] Embed Pods Frameworks */,
+				C91486ABC32A13E3D4033EAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,24 +229,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9427F68ED3DB13D12D5286FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7D98EB671C21D47E2425196 /* [CP] Check Pods Manifest.lock */ = {
+		0D354088345D2DCB89E9A851 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,6 +251,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C91486ABC32A13E3D4033EAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -240,13 +279,18 @@
 				182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */,
 				182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */,
 				182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */,
+				182E35A129CB884700360734 /* CardView.swift in Sources */,
 				189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */,
 				186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */,
 				182F754629BD02D700D0F751 /* LogInPageView.swift in Sources */,
 				182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */,
+				182E359B29CB81CE00360734 /* User.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
 				182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */,
 				182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */,
+				182E359D29CB82A200360734 /* Event.swift in Sources */,
+				182E359F29CB847100360734 /* Extensions.swift in Sources */,
+				18D18A2829D8A1E9000D6CBB /* AdminPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +413,7 @@
 		};
 		182F754329BB881400D0F751 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 829A05385C3B018768CC0914 /* Pods-EventsApp.debug.xcconfig */;
+			baseConfigurationReference = 95B2B75BBE7FD74A0F7B15BB /* Pods-EventsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,6 +428,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -399,7 +444,7 @@
 		};
 		182F754429BB881400D0F751 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AB48A04E0D8CDCE6CE729BE /* Pods-EventsApp.release.xcconfig */;
+			baseConfigurationReference = 2249AE578492F64D0F1EB4EB /* Pods-EventsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -414,6 +459,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

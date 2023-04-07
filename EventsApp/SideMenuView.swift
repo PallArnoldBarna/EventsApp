@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SideMenuView: View {
+    @EnvironmentObject var viewModel: AppViewModel
     @Binding var darkMode: Bool
     @Binding var showSideMenu: Bool
     @AppStorage("Dark/Light Mode") private var darkModeValue: Bool = false
@@ -38,13 +39,13 @@ struct SideMenuView: View {
                     .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
                 
-                Text("A")
+                Text(viewModel.username.prefix(1))
                     .foregroundColor(.white)
                     .font(.system(size: 40))
                     
             }
             
-            Text("User")
+            Text(viewModel.username)
                 .font(.system(size: 30))
                 .padding(.bottom, 50)
             
@@ -65,23 +66,6 @@ struct SideMenuView: View {
                 }
             }
             
-            NavigationLink(destination: SettingsPageView()) {
-                HStack(spacing: 22) {
-                    Image(systemName: "gearshape.fill")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                    
-                    Text("Settings")
-                }
-                Spacer()
-            }
-            .simultaneousGesture(TapGesture().onEnded{
-                withAnimation(.default) {
-                    self.showSideMenu.toggle()
-                }
-            })
-            .padding(.top, 25)
-            
             NavigationLink(destination: FavouriteEventsPageView()) {
                 HStack(spacing: 22) {
                     Image(systemName: "star.fill")
@@ -99,6 +83,39 @@ struct SideMenuView: View {
             })
             .padding(.top, 25)
             
+            NavigationLink(destination: SettingsPageView()) {
+                HStack(spacing: 22) {
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                    
+                    Text("Settings")
+                }
+                Spacer()
+            }
+            .simultaneousGesture(TapGesture().onEnded{
+                withAnimation(.default) {
+                    self.showSideMenu.toggle()
+                }
+            })
+            .padding(.top, 25)
+            
+            NavigationLink(destination: AdminPageView()) {
+                HStack(spacing: 22) {
+                    Image(systemName: "wrench.adjustable.fill")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                    
+                    Text("Admin page")
+                }
+                Spacer()
+            }
+            .simultaneousGesture(TapGesture().onEnded{
+                withAnimation(.default) {
+                    self.showSideMenu.toggle()
+                }
+            })
+            .padding(.top, 25)
             
             Spacer()
         }
@@ -107,7 +124,9 @@ struct SideMenuView: View {
         .frame(width: UIScreen.main.bounds.width / 1.5)
         .background((self.darkMode ? (Color.black) : (Color.white)).edgesIgnoringSafeArea(.all))
         .overlay(Rectangle().stroke(Color.primary.opacity(0.2), lineWidth: 2).shadow(radius: 3).edgesIgnoringSafeArea(.all))
-        
+        .onAppear {
+            viewModel.getUsername()
+        }
     }
 }
 

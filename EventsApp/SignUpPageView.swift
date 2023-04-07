@@ -52,7 +52,9 @@ struct SignUpPageView: View {
                 
                 Button(action: {
                     self.showAlert.toggle()
-                    viewModel.signUp(email: email, password: password)
+                    let emptyList: [Event] = []
+                    let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
+                    viewModel.signUp(email: email, password: password, user: user)
                 }, label: {
                     Text("Sign up")
                 })
