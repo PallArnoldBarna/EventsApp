@@ -9,7 +9,7 @@ import SwiftUI
 import ExytePopupView
 
 struct HomePageView: View {
-    @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
     @State private var showSideMenu = false
     @AppStorage("key") var darkMode: Bool = false
     @State private var showingPopup = false
@@ -44,7 +44,7 @@ struct HomePageView: View {
                     if isDataLoaded {
                         ProgressView()
                     } else {
-                        Text("You are logged in, \(viewModel.username)")
+                        Text("You are logged in, \(loginViewModel.username)")
                     }
                     VStack {
                         HStack {
@@ -102,7 +102,7 @@ struct HomePageView: View {
                 
         }
         .onAppear {
-            viewModel.getUsername()
+            loginViewModel.getUsername()
             DispatchQueue.main.async {
                 self.isDataLoaded = false
             }

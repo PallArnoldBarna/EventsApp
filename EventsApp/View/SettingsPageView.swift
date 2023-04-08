@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsPageView: View {
-    @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
     @State private var showAlert = false
     
     var body: some View {
@@ -29,7 +29,7 @@ struct SettingsPageView: View {
         .padding()
         .alert(isPresented: $showAlert) {
             return Alert(title: Text("Sign out"), message: Text("Do you want to sign out?"), primaryButton: .destructive(Text("Sign out")) {
-                viewModel.signOut()
+                loginViewModel.signOut()
             }, secondaryButton: .cancel(Text("Cancel")))
         }
     }

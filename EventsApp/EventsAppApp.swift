@@ -15,9 +15,11 @@ struct EventsAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            let viewModel = AppViewModel()
+            let loginViewModel = LoginViewModel()
+            let signUpViewModel = SignUpViewModel(loginViewModel: loginViewModel)
             ContentView()
-                .environmentObject(viewModel)
+                .environmentObject(loginViewModel)
+                .environmentObject(signUpViewModel)
         }
     }
 }

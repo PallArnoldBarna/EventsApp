@@ -1,33 +1,38 @@
 //
-//  LogInPageView.swift
+//  SignUpPageView.swift
 //  EventsApp
 //
 //  Created by Páll Arnold-Barna on 11.03.2023.
 //
 
 import SwiftUI
-//import UIKit
 
-struct LogInPageView: View {
+struct SignUpPageView: View {
+    @State var username = ""
     @State var email = ""
     @State var password = ""
+    @State var passwordAgain = ""
     @State private var showAlert = false
-    @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var signUpViewModel: SignUpViewModel
     
     var body: some View {
+        
         VStack {
-            
             Spacer()
+            
             VStack {
-                //Spacer()
-                Text("Login")
+                Text("Sign up")
                     .fontWeight(.bold)
                     .font(.largeTitle)
                     .padding(.top, -150)
                 
+                TextField("Username", text: $username)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                
                 TextField("Email address", text: $email)
-                    .keyboardType(.emailAddress)
-                    .textContentType(.emailAddress)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .padding()
@@ -39,19 +44,30 @@ struct LogInPageView: View {
                     .padding()
                     .background(Color(.secondarySystemBackground))
                 
+                SecureField("Password again", text: $passwordAgain)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                
                 Button(action: {
                     self.showAlert.toggle()
-                    viewModel.logIn(email: email, password: password)
+                    let emptyList: [Event] = []
+                    let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
+                    signUpViewModel.signUp(email: email, password: password, user: user)
                 }, label: {
-                    Text("Login")
-                        
+                    Text("Sign up")
                 })
                 .modifier(ButtonModifier())
                 .alert(isPresented: $showAlert) {
-                    if email.isEmpty {
+                    
+                    if username.isEmpty {
+                        return Alert(title: Text("Username field is empty!"),dismissButton: .default(Text("Got it!")))
+                    }
+                    else if email.isEmpty {
                         return Alert(title: Text("Email field is empty!"),dismissButton: .default(Text("Got it!")))
                     }
-                    else if viewModel.isValidEmailAddress(email: email) == false {
+                    else if email.isValidEmailAddress(email: email) == false {
                         return Alert(title: Text("Email format wrong!"),dismissButton: .default(Text("Got it!")))
                     }
                     else if password.isEmpty {
@@ -60,13 +76,16 @@ struct LogInPageView: View {
                     else if password.count < 6 {
                         return Alert(title: Text("Password length is smaller then the minimum!"),dismissButton: .default(Text("Got it!")))
                     }
+                    else if passwordAgain.isEmpty {
+                        return Alert(title: Text("Password again field is empty!"),dismissButton: .default(Text("Got it!")))
+                    }
+                    else if password != passwordAgain {
+                        return Alert(title: Text("The 2 passwords are not the same!"),dismissButton: .default(Text("Got it!")))
+                    }
                     else {
-                        return Alert(title: Text("You are logged in!"),dismissButton: .default(Text("OK")))
+                        return Alert(title: Text("You are signed up and logged in!"),dismissButton: .default(Text("OK")))
                     }
                 }
-                
-                NavigationLink("Don't have an account? Sing up here", destination: SignUpPageView())
-                    .padding()
                 
             }
             .padding()
@@ -76,11 +95,10 @@ struct LogInPageView: View {
         
     }
     
-    
 }
 
-struct LogInPageView_Previews: PreviewProvider {
+struct SignUpPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInPageView()
+        SignUpPageView()
     }
 }

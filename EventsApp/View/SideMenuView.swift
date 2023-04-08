@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
     @Binding var darkMode: Bool
     @Binding var showSideMenu: Bool
     @AppStorage("Dark/Light Mode") private var darkModeValue: Bool = false
@@ -39,13 +39,13 @@ struct SideMenuView: View {
                     .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
                 
-                Text(viewModel.username.prefix(1))
+                Text(loginViewModel.username.prefix(1))
                     .foregroundColor(.white)
                     .font(.system(size: 40))
                     
             }
             
-            Text(viewModel.username)
+            Text(loginViewModel.username)
                 .font(.system(size: 30))
                 .padding(.bottom, 50)
             
@@ -116,6 +116,7 @@ struct SideMenuView: View {
                 }
             })
             .padding(.top, 25)
+            .isHidden(loginViewModel.userType != UserType.admin)
             
             Spacer()
         }
@@ -125,7 +126,8 @@ struct SideMenuView: View {
         .background((self.darkMode ? (Color.black) : (Color.white)).edgesIgnoringSafeArea(.all))
         .overlay(Rectangle().stroke(Color.primary.opacity(0.2), lineWidth: 2).shadow(radius: 3).edgesIgnoringSafeArea(.all))
         .onAppear {
-            viewModel.getUsername()
+            loginViewModel.getUsername()
+            loginViewModel.getUserType()
         }
     }
 }

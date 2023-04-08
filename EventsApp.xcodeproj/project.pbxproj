@@ -17,7 +17,6 @@
 		182F753F29BB881400D0F751 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182F753E29BB881400D0F751 /* Preview Assets.xcassets */; };
 		182F754629BD02D700D0F751 /* LogInPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754529BD02D700D0F751 /* LogInPageView.swift */; };
 		182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754729BD031F00D0F751 /* SignUpPageView.swift */; };
-		182F754A29BD039600D0F751 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754929BD039600D0F751 /* AppViewModel.swift */; };
 		182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754B29BD03E000D0F751 /* HomePageView.swift */; };
 		182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754D29BDFCC500D0F751 /* ButtonModifier.swift */; };
 		182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754F29BE3A2100D0F751 /* SideMenuView.swift */; };
@@ -25,6 +24,8 @@
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
+		18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C729E087C30086B535 /* LoginViewModel.swift */; };
+		18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C929E087D70086B535 /* SignUpViewModel.swift */; };
 		18D18A2829D8A1E9000D6CBB /* AdminPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */; };
 		64F5C44225AEA9B6D886E633 /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2145C779786E6190E8AD2136 /* Pods_EventsApp.framework */; };
 /* End PBXBuildFile section */
@@ -41,7 +42,6 @@
 		182F753E29BB881400D0F751 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		182F754529BD02D700D0F751 /* LogInPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPageView.swift; sourceTree = "<group>"; };
 		182F754729BD031F00D0F751 /* SignUpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageView.swift; sourceTree = "<group>"; };
-		182F754929BD039600D0F751 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		182F754B29BD03E000D0F751 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		182F754D29BDFCC500D0F751 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		182F754F29BE3A2100D0F751 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18A6C8C729E087C30086B535 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		18A6C8C929E087D70086B535 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPageView.swift; sourceTree = "<group>"; };
 		2145C779786E6190E8AD2136 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2249AE578492F64D0F1EB4EB /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		182F753629BB881200D0F751 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
-				182F754929BD039600D0F751 /* AppViewModel.swift */,
 				18A6C8C629E076850086B535 /* ViewModel */,
 				18A6C8C529E0767D0086B535 /* View */,
 				18A6C8C429E076740086B535 /* Model */,
@@ -97,19 +98,9 @@
 				182F753B29BB881400D0F751 /* Assets.xcassets */,
 				189ED96A29BB94C700754FEC /* GoogleService-Info.plist */,
 				182F753D29BB881400D0F751 /* Preview Content */,
-				182F754529BD02D700D0F751 /* LogInPageView.swift */,
-				182F754729BD031F00D0F751 /* SignUpPageView.swift */,
-				182F754B29BD03E000D0F751 /* HomePageView.swift */,
 				182F754D29BDFCC500D0F751 /* ButtonModifier.swift */,
-				182F754F29BE3A2100D0F751 /* SideMenuView.swift */,
 				182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */,
-				189B29B929C78D8200EA95F9 /* SettingsPageView.swift */,
-				186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */,
-				182E359A29CB81CE00360734 /* User.swift */,
-				182E359C29CB82A200360734 /* Event.swift */,
 				182E359E29CB847100360734 /* Extensions.swift */,
-				182E35A029CB884700360734 /* CardView.swift */,
-				18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -125,6 +116,8 @@
 		18A6C8C429E076740086B535 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				182E359A29CB81CE00360734 /* User.swift */,
+				182E359C29CB82A200360734 /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +125,14 @@
 		18A6C8C529E0767D0086B535 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				182F754529BD02D700D0F751 /* LogInPageView.swift */,
+				182F754729BD031F00D0F751 /* SignUpPageView.swift */,
+				182F754B29BD03E000D0F751 /* HomePageView.swift */,
+				182F754F29BE3A2100D0F751 /* SideMenuView.swift */,
+				189B29B929C78D8200EA95F9 /* SettingsPageView.swift */,
+				186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */,
+				182E35A029CB884700360734 /* CardView.swift */,
+				18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +140,8 @@
 		18A6C8C629E076850086B535 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18A6C8C729E087C30086B535 /* LoginViewModel.swift */,
+				18A6C8C929E087D70086B535 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,16 +278,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182F754A29BD039600D0F751 /* AppViewModel.swift in Sources */,
 				182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */,
 				182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */,
 				182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */,
+				18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */,
 				182E35A129CB884700360734 /* CardView.swift in Sources */,
 				189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */,
 				186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */,
 				182F754629BD02D700D0F751 /* LogInPageView.swift in Sources */,
 				182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */,
 				182E359B29CB81CE00360734 /* User.swift in Sources */,
+				18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
 				182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */,
 				182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */,

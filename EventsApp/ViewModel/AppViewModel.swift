@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 import Firebase
 import FirebaseAuth
 
@@ -27,7 +28,7 @@ class AppViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 self?.loggedIn = true
-                self?.getUsername()
+                //self?.getUsername()
             }
             
         }
@@ -71,7 +72,7 @@ class AppViewModel: ObservableObject {
     }
     
     func getUsername() {
-        ref.child("Users").child(auth.currentUser!.uid).child("username").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("username").observeSingleEvent(of: .value, with: { snapshot in
             if let value = snapshot.value as? String {
                 DispatchQueue.main.async {
                     self.username = value

@@ -10,11 +10,11 @@ import FirebaseAuth
 
 struct ContentView: View {
    
-    @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
     
     var body: some View {
         NavigationView {
-            if viewModel.loggedIn {
+            if loginViewModel.loggedIn {
                 HomePageView()
             }
             else {
@@ -22,8 +22,8 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            viewModel.loggedIn = viewModel.isLoggedIn
-            viewModel.getUsername()
+            loginViewModel.loggedIn = loginViewModel.isLoggedIn
+            loginViewModel.getUsername()
         }
     }
 }
@@ -31,6 +31,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(AppViewModel())
+            .environmentObject(LoginViewModel())
+            .environmentObject(SignUpViewModel(loginViewModel: LoginViewModel()))
     }
 }
