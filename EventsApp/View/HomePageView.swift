@@ -8,12 +8,22 @@
 import SwiftUI
 import ExytePopupView
 
+enum BigCardSizes {
+    static let cardSize = 250
+    static let imageSize = 100
+}
+
+enum SmallCardSizes {
+    static let cardSize = 120
+    static let imageSize = 50
+}
+
 struct HomePageView: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     @State private var showSideMenu = false
     @AppStorage("key") var darkMode: Bool = false
     @State private var showingPopup = false
-    @State private var isDataLoaded = true
+    @State private var isDataLoaded = false
 
     var body: some View {
         
@@ -48,21 +58,21 @@ struct HomePageView: View {
                     }
                     VStack {
                         HStack {
-                            NavigationLink(destination: FavouriteEventsPageView()) {
-                                CardView(cardWidth: 210, cardHeight: 210, cardColor: .red, vStackSpacing: 25, cardImageString: "globe", cardImageWidth: 75, cardImageHeight: 75, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            NavigationLink(destination: EventListView()) {
+                                CardView(cardWidth: CGFloat(BigCardSizes.cardSize), cardHeight: CGFloat(BigCardSizes.cardSize), cardColor: .red, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(BigCardSizes.imageSize), cardImageHeight: CGFloat(BigCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                             }
                             
-                            VStack(spacing: 10) {
-                                CardView(cardWidth: 100, cardHeight: 100, cardColor: .blue, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
-                                CardView(cardWidth: 100, cardHeight: 100, cardColor: .yellow, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            VStack() {
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                             }
                         }
-                        HStack(spacing: 10) {
-                            CardView(cardWidth: 100, cardHeight: 100, cardColor: .orange, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                        HStack() {
+                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                             
-                            CardView(cardWidth: 100, cardHeight: 100, cardColor: .green, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                             
-                            CardView(cardWidth: 100, cardHeight: 100, cardColor: .purple, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: 25, cardImageHeight: 25, cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                         }
                     }
                     
@@ -98,8 +108,6 @@ struct HomePageView: View {
                 Spacer(minLength: 0)
             }
             .background(Color.primary.opacity(self.showSideMenu ? (self.darkMode ? 0.05 : 0.2) : 0).edgesIgnoringSafeArea(.all))
-            
-                
         }
         .onAppear {
             loginViewModel.getUsername()

@@ -35,6 +35,12 @@ extension View {
     }
 }
 
+extension View {
+    func border(width: CGFloat, edges: [Edge], color: SwiftUI.Color) -> some View {
+        overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
+    }
+}
+
 extension String {
     func isValidEmailAddress(email: String) -> Bool {
         let emailValidationRegex = "^[\\p{L}0-9!#$%&'*+\\/=?^_`{|}~-][\\p{L}0-9.!#$%&'*+\\/=?^_`{|}~-]{0,63}@[\\p{L}0-9-]+(?:\\.[\\p{L}0-9-]{2,7})*$"
