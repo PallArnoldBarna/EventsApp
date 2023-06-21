@@ -25,7 +25,7 @@ struct CardView: View {
                 .frame(width: cardWidth, height: cardHeight)
                 .foregroundColor(cardColor)
             VStack(spacing: vStackSpacing) {
-                Image(systemName: cardImageString)
+                Image(cardImageString)
                     .resizable()
                     .frame(width: cardImageWidth, height: cardImageHeight)
                     .foregroundColor(cardImageColor)

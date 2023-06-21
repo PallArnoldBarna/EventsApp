@@ -21,6 +21,7 @@
 		182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754D29BDFCC500D0F751 /* ButtonModifier.swift */; };
 		182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754F29BE3A2100D0F751 /* SideMenuView.swift */; };
 		182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */; };
+		18451DA92A4331C6002E2F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */; };
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
@@ -50,6 +51,8 @@
 		182F754D29BDFCC500D0F751 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		182F754F29BE3A2100D0F751 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderCentered.swift; sourceTree = "<group>"; };
+		18451DA72A432C0E002E2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		182F752B29BB881200D0F751 = {
 			isa = PBXGroup;
 			children = (
+				18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */,
 				182F753629BB881200D0F751 /* EventsApp */,
 				182F753529BB881200D0F751 /* Products */,
 				A70F1DB39A8638AB6E040095 /* Pods */,
@@ -98,6 +102,7 @@
 		182F753629BB881200D0F751 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				18451DA72A432C0E002E2F98 /* Info.plist */,
 				18A6C8C629E076850086B535 /* ViewModel */,
 				18A6C8C529E0767D0086B535 /* View */,
 				18A6C8C429E076740086B535 /* Model */,
@@ -236,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182F753F29BB881400D0F751 /* Preview Assets.xcassets in Resources */,
+				18451DA92A4331C6002E2F98 /* LaunchScreen.storyboard in Resources */,
 				182F753C29BB881400D0F751 /* Assets.xcassets in Resources */,
 				189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */,
 			);
@@ -437,15 +443,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EventsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 99NPBL5XS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EventsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -468,15 +476,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EventsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 99NPBL5XS9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EventsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;

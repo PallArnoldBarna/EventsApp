@@ -10,7 +10,7 @@ import ExytePopupView
 
 enum BigCardSizes {
     static let cardSize = 250
-    static let imageSize = 100
+    static let imageSize = 125
 }
 
 enum SmallCardSizes {
@@ -59,20 +59,20 @@ struct HomePageView: View {
                     VStack {
                         HStack {
                             NavigationLink(destination: EventListView()) {
-                                CardView(cardWidth: CGFloat(BigCardSizes.cardSize), cardHeight: CGFloat(BigCardSizes.cardSize), cardColor: .red, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(BigCardSizes.imageSize), cardImageHeight: CGFloat(BigCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                                CardView(cardWidth: CGFloat(BigCardSizes.cardSize), cardHeight: CGFloat(BigCardSizes.cardSize), cardColor: .red, vStackSpacing: 10, cardImageString: "globe_icon", cardImageWidth: CGFloat(BigCardSizes.imageSize), cardImageHeight: CGFloat(BigCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                             }
                             
                             VStack() {
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "party_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Party", cardTextColor: .white)
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "festival_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Festival", cardTextColor: .white)
                             }
                         }
                         HStack() {
-                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "conference_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Conference", cardTextColor: .white)
                             
-                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "sport_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Sport", cardTextColor: .white)
                             
-                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "globe", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "cultural_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Cultural", cardTextColor: .white)
                         }
                     }
                     
