@@ -22,7 +22,6 @@ struct HomePageView: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     @State private var showSideMenu = false
     @AppStorage("key") var darkMode: Bool = false
-    @State private var showingPopup = false
     @State private var isDataLoaded = false
 
     var body: some View {
@@ -51,51 +50,37 @@ struct HomePageView: View {
                     .foregroundColor(.primary)
 
                     Spacer()
-                    if isDataLoaded {
-                        ProgressView()
-                    } else {
-                        Text("You are logged in, \(loginViewModel.username)")
-                    }
                     VStack {
                         HStack {
-                            NavigationLink(destination: EventListView()) {
+                            NavigationLink(destination: EventListView(navbarTitle: "All events")) {
                                 CardView(cardWidth: CGFloat(BigCardSizes.cardSize), cardHeight: CGFloat(BigCardSizes.cardSize), cardColor: .red, vStackSpacing: 10, cardImageString: "globe_icon", cardImageWidth: CGFloat(BigCardSizes.imageSize), cardImageHeight: CGFloat(BigCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
                             }
                             
                             VStack() {
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "party_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Party", cardTextColor: .white)
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "festival_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Festival", cardTextColor: .white)
+                                NavigationLink(destination: EventListView(navbarTitle: "Parties")) {
+                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "party_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Party", cardTextColor: .white)
+                                }
+                                NavigationLink(destination: EventListView(navbarTitle: "Festivals")) {
+                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "festival_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Festival", cardTextColor: .white)
+                                }
                             }
                         }
                         HStack() {
-                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "conference_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Conference", cardTextColor: .white)
+                            NavigationLink(destination: EventListView(navbarTitle: "Conferences")) {
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "conference_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Conference", cardTextColor: .white)
+                            }
                             
-                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "sport_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Sport", cardTextColor: .white)
+                            NavigationLink(destination: EventListView(navbarTitle: "Sport events")) {
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "sport_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Sport", cardTextColor: .white)
+                            }
                             
-                            CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "cultural_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Cultural", cardTextColor: .white)
+                            NavigationLink(destination: EventListView(navbarTitle: "Cultural")) {
+                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "cultural_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Cultural", cardTextColor: .white)
+                            }
                         }
                     }
                     
                     Spacer()
-                    Button(action: {
-                        self.showingPopup.toggle()
-                    }, label: {
-                        Text("button")
-                    })
-                    .popup(isPresented: $showingPopup) {
-                        Text("The popup")
-                            .foregroundColor(.white)
-                            .frame(width: 300, height: 60)
-                            .background(.green)
-                            .cornerRadius(10)
-                            .padding(.bottom, 30)
-                    } customize: {
-                        $0.autohideIn(2)
-                            .type(.toast)
-                            .position(.bottom)
-                            .animation(.spring())
-                            .closeOnTapOutside(true)
-                    }
                 }
                 
             }

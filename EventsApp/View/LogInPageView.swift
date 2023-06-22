@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-//import UIKit
+import ExytePopupView
 
 struct LogInPageView: View {
     @State var email = ""
     @State var password = ""
-    @State private var showAlert = false
+    @State private var showingPopup = false
     @EnvironmentObject var loginViewModel: LoginViewModel
     
     var body: some View {
@@ -40,29 +40,33 @@ struct LogInPageView: View {
                     .background(Color(.secondarySystemBackground))
                 
                 Button(action: {
-                    self.showAlert.toggle()
+                    self.showingPopup = true
                     loginViewModel.logIn(email: email, password: password)
                 }, label: {
                     Text("Login")
                         
                 })
                 .modifier(ButtonModifier())
-                .alert(isPresented: $showAlert) {
+                .popup(isPresented: $showingPopup) {
                     if email.isEmpty {
-                        return Alert(title: Text("Email field is empty!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Email field is empty!")
                     }
                     else if email.isValidEmailAddress(email: email) == false {
-                        return Alert(title: Text("Email format wrong!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Email format wrong!")
                     }
                     else if password.isEmpty {
-                        return Alert(title: Text("Password field is empty!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Password field is empty!")
                     }
                     else if password.count < 6 {
-                        return Alert(title: Text("Password length is smaller then the minimum!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Password length is smaller then the minimum!")
                     }
-                    else {
-                        return Alert(title: Text("You are logged in!"),dismissButton: .default(Text("OK")))
-                    }
+                }
+                customize: {
+                    $0.autohideIn(2)
+                        .type(.toast)
+                        .position(.bottom)
+                        .animation(.spring())
+                        .closeOnTapOutside(true)
                 }
                 
                 NavigationLink("Don't have an account? Sing up here", destination: SignUpPageView())

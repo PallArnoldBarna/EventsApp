@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventListView: View {
+    let navbarTitle: String
     @State var tabIndex = 1
        
        var body: some View {
@@ -29,12 +30,12 @@ struct EventListView: View {
            }
            .frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
            .padding(.horizontal, 12)
-           .navigationBarTitle("All events", displayMode: .inline)
+           .navigationBarTitle(navbarTitle, displayMode: .inline)
        }
 }
 
 struct EventListView_Previews: PreviewProvider {
     static var previews: some View {
-        EventListView()
+        EventListView(navbarTitle: "All events")
     }
 }

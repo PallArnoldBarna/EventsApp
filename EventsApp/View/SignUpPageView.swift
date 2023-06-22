@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import ExytePopupView
 
 struct SignUpPageView: View {
     @State var username = ""
     @State var email = ""
     @State var password = ""
     @State var passwordAgain = ""
-    @State private var showAlert = false
+    @State private var showingPopup = false
     @EnvironmentObject var signUpViewModel: SignUpViewModel
     
     var body: some View {
@@ -51,7 +52,7 @@ struct SignUpPageView: View {
                     .background(Color(.secondarySystemBackground))
                 
                 Button(action: {
-                    self.showAlert.toggle()
+                    self.showingPopup.toggle()
                     let emptyList: [Event] = []
                     let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
                     signUpViewModel.signUp(email: email, password: password, user: user)
@@ -59,32 +60,34 @@ struct SignUpPageView: View {
                     Text("Sign up")
                 })
                 .modifier(ButtonModifier())
-                .alert(isPresented: $showAlert) {
-                    
+                .popup(isPresented: $showingPopup) {
                     if username.isEmpty {
-                        return Alert(title: Text("Username field is empty!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Username field is empty!")
                     }
                     else if email.isEmpty {
-                        return Alert(title: Text("Email field is empty!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Email field is empty!")
                     }
                     else if email.isValidEmailAddress(email: email) == false {
-                        return Alert(title: Text("Email format wrong!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Email format wrong!")
                     }
                     else if password.isEmpty {
-                        return Alert(title: Text("Password field is empty!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Password field is empty!")
                     }
                     else if password.count < 6 {
-                        return Alert(title: Text("Password length is smaller then the minimum!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Password length is smaller then the minimum!")
                     }
                     else if passwordAgain.isEmpty {
-                        return Alert(title: Text("Password again field is empty!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "Password again field is empty!")
                     }
                     else if password != passwordAgain {
-                        return Alert(title: Text("The 2 passwords are not the same!"),dismissButton: .default(Text("Got it!")))
+                        PopupView(popupText: "The 2 passwords are not the same!")
                     }
-                    else {
-                        return Alert(title: Text("You are signed up and logged in!"),dismissButton: .default(Text("OK")))
-                    }
+                } customize: {
+                    $0.autohideIn(2)
+                        .type(.toast)
+                        .position(.bottom)
+                        .animation(.spring())
+                        .closeOnTapOutside(true)
                 }
                 
             }

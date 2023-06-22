@@ -22,6 +22,7 @@
 		182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754F29BE3A2100D0F751 /* SideMenuView.swift */; };
 		182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */; };
 		18451DA92A4331C6002E2F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */; };
+		18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA02A4477EE007A3CE7 /* PopupView.swift */; };
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
@@ -53,6 +54,7 @@
 		182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderCentered.swift; sourceTree = "<group>"; };
 		18451DA72A432C0E002E2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18569CA02A4477EE007A3CE7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -83,7 +85,6 @@
 		182F752B29BB881200D0F751 = {
 			isa = PBXGroup;
 			children = (
-				18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */,
 				182F753629BB881200D0F751 /* EventsApp */,
 				182F753529BB881200D0F751 /* Products */,
 				A70F1DB39A8638AB6E040095 /* Pods */,
@@ -102,21 +103,17 @@
 		182F753629BB881200D0F751 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				18451DAA2A4460C0002E2F98 /* LaunchScreen */,
 				18451DA72A432C0E002E2F98 /* Info.plist */,
 				18A6C8C629E076850086B535 /* ViewModel */,
 				18A6C8C529E0767D0086B535 /* View */,
 				18A6C8C429E076740086B535 /* Model */,
 				182F753729BB881200D0F751 /* EventsAppApp.swift */,
 				182F753929BB881200D0F751 /* ContentView.swift */,
+				18569C9F2A4477A1007A3CE7 /* Other */,
 				182F753B29BB881400D0F751 /* Assets.xcassets */,
 				189ED96A29BB94C700754FEC /* GoogleService-Info.plist */,
 				182F753D29BB881400D0F751 /* Preview Content */,
-				182F754D29BDFCC500D0F751 /* ButtonModifier.swift */,
-				182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */,
-				182E359E29CB847100360734 /* Extensions.swift */,
-				18A6C8CC29E1BD110086B535 /* EdgeBorder.swift */,
-				18A6C8CE29E1BD490086B535 /* TabBarButton.swift */,
-				18A6C8D029E1BD820086B535 /* CustomTopTabBar.swift */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -127,6 +124,27 @@
 				182F753E29BB881400D0F751 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		18451DAA2A4460C0002E2F98 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		18569C9F2A4477A1007A3CE7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				182F754D29BDFCC500D0F751 /* ButtonModifier.swift */,
+				182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */,
+				182E359E29CB847100360734 /* Extensions.swift */,
+				18A6C8CC29E1BD110086B535 /* EdgeBorder.swift */,
+				18A6C8CE29E1BD490086B535 /* TabBarButton.swift */,
+				18A6C8D029E1BD820086B535 /* CustomTopTabBar.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		18A6C8C429E076740086B535 /* Model */ = {
@@ -150,6 +168,7 @@
 				182E35A029CB884700360734 /* CardView.swift */,
 				18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */,
 				18A6C8D229E1BDD30086B535 /* EventListView.swift */,
+				18569CA02A4477EE007A3CE7 /* PopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +326,7 @@
 				182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */,
 				182E359B29CB81CE00360734 /* User.swift in Sources */,
 				18A6C8D329E1BDD30086B535 /* EventListView.swift in Sources */,
+				18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */,
 				18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
 				182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */,
