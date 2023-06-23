@@ -1,33 +1,38 @@
 //
-//  LogInPageView.swift
+//  AddUserPageView.swift
 //  EventsApp
 //
-//  Created by Páll Arnold-Barna on 11.03.2023.
+//  Created by Páll Arnold-Barna on 23.06.2023.
 //
 
 import SwiftUI
 import ExytePopupView
 
-struct LogInPageView: View {
+struct AddUserPageView: View {
+    @State var username = ""
     @State var email = ""
     @State var password = ""
+    @State var passwordAgain = ""
     @State private var showingPopup = false
-    @EnvironmentObject var loginViewModel: LoginViewModel
+    @EnvironmentObject var addUserViewModel: AddUserViewModel
     
     var body: some View {
         VStack {
-            
             Spacer()
+            
             VStack {
-                //Spacer()
-                Text("Login")
+                Text("Add new user")
                     .fontWeight(.bold)
                     .font(.largeTitle)
                     .padding(.top, -150)
                 
+                TextField("Username", text: $username)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                
                 TextField("Email address", text: $email)
-                    .keyboardType(.emailAddress)
-                    .textContentType(.emailAddress)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .padding()
@@ -39,16 +44,26 @@ struct LogInPageView: View {
                     .padding()
                     .background(Color(.secondarySystemBackground))
                 
+                SecureField("Password again", text: $passwordAgain)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color(.secondarySystemBackground))
+                
                 Button(action: {
-                    self.showingPopup = true
-                    loginViewModel.logIn(email: email, password: password)
+                    self.showingPopup.toggle()
+                    let emptyList: [Event] = []
+                    let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
+                    addUserViewModel.createUser(email: email, password: password, user: user)
                 }, label: {
-                    Text("Login")
-                        
+                    Text("Add new user")
                 })
                 .modifier(ButtonModifier())
                 .popup(isPresented: $showingPopup) {
-                    if email.isEmpty {
+                    if username.isEmpty {
+                        PopupView(popupText: "Username field is empty!", backgroundColor: .red)
+                    }
+                    else if email.isEmpty {
                         PopupView(popupText: "Email field is empty!", backgroundColor: .red)
                     }
                     else if email.isValidEmailAddress(email: email) == false {
@@ -60,8 +75,16 @@ struct LogInPageView: View {
                     else if password.count < 6 {
                         PopupView(popupText: "Password length is smaller then the minimum!", backgroundColor: .red)
                     }
-                }
-                customize: {
+                    else if passwordAgain.isEmpty {
+                        PopupView(popupText: "Password again field is empty!", backgroundColor: .red)
+                    }
+                    else if password != passwordAgain {
+                        PopupView(popupText: "The 2 passwords are not the same!", backgroundColor: .red)
+                    }
+                    else {
+                        PopupView(popupText: "User created successfully!", backgroundColor: .green)
+                    }
+                } customize: {
                     $0.autohideIn(2)
                         .type(.toast)
                         .position(.bottom)
@@ -69,22 +92,16 @@ struct LogInPageView: View {
                         .closeOnTapOutside(true)
                 }
                 
-                NavigationLink("Don't have an account? Sing up here", destination: SignUpPageView())
-                    .padding()
-                
             }
             .padding()
             
             Spacer()
         }
-        
     }
-    
-    
 }
 
-struct LogInPageView_Previews: PreviewProvider {
+struct AddUserPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInPageView()
+        AddUserPageView()
     }
 }

@@ -23,8 +23,13 @@
 		182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */; };
 		18451DA92A4331C6002E2F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */; };
 		18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA02A4477EE007A3CE7 /* PopupView.swift */; };
+		18569CA32A45A45C007A3CE7 /* AddEventPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */; };
+		18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */; };
+		18569CA72A45A818007A3CE7 /* AddUserPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA62A45A818007A3CE7 /* AddUserPageView.swift */; };
+		18569CA92A45A82B007A3CE7 /* AddUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */; };
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
+		189E10FA2A4602D5001CBD93 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10F92A4602D5001CBD93 /* ImagePicker.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
 		18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C729E087C30086B535 /* LoginViewModel.swift */; };
 		18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C929E087D70086B535 /* SignUpViewModel.swift */; };
@@ -55,8 +60,13 @@
 		18451DA72A432C0E002E2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18569CA02A4477EE007A3CE7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPageView.swift; sourceTree = "<group>"; };
+		18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
+		18569CA62A45A818007A3CE7 /* AddUserPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserPageView.swift; sourceTree = "<group>"; };
+		18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewModel.swift; sourceTree = "<group>"; };
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
+		189E10F92A4602D5001CBD93 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18A6C8C729E087C30086B535 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18A6C8C929E087D70086B535 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +153,7 @@
 				18A6C8CC29E1BD110086B535 /* EdgeBorder.swift */,
 				18A6C8CE29E1BD490086B535 /* TabBarButton.swift */,
 				18A6C8D029E1BD820086B535 /* CustomTopTabBar.swift */,
+				189E10F92A4602D5001CBD93 /* ImagePicker.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -169,6 +180,8 @@
 				18D18A2729D8A1E9000D6CBB /* AdminPageView.swift */,
 				18A6C8D229E1BDD30086B535 /* EventListView.swift */,
 				18569CA02A4477EE007A3CE7 /* PopupView.swift */,
+				18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */,
+				18569CA62A45A818007A3CE7 /* AddUserPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +191,8 @@
 			children = (
 				18A6C8C729E087C30086B535 /* LoginViewModel.swift */,
 				18A6C8C929E087D70086B535 /* SignUpViewModel.swift */,
+				18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */,
+				18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -318,9 +333,11 @@
 				182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */,
 				182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */,
 				182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */,
+				189E10FA2A4602D5001CBD93 /* ImagePicker.swift in Sources */,
 				18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */,
 				182E35A129CB884700360734 /* CardView.swift in Sources */,
 				189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */,
+				18569CA72A45A818007A3CE7 /* AddUserPageView.swift in Sources */,
 				186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */,
 				182F754629BD02D700D0F751 /* LogInPageView.swift in Sources */,
 				182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */,
@@ -329,13 +346,16 @@
 				18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */,
 				18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
+				18569CA92A45A82B007A3CE7 /* AddUserViewModel.swift in Sources */,
 				182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */,
 				182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */,
 				182E359D29CB82A200360734 /* Event.swift in Sources */,
+				18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */,
 				182E359F29CB847100360734 /* Extensions.swift in Sources */,
 				18A6C8CD29E1BD110086B535 /* EdgeBorder.swift in Sources */,
 				18A6C8CF29E1BD490086B535 /* TabBarButton.swift in Sources */,
 				18A6C8D129E1BD820086B535 /* CustomTopTabBar.swift in Sources */,
+				18569CA32A45A45C007A3CE7 /* AddEventPageView.swift in Sources */,
 				18D18A2829D8A1E9000D6CBB /* AdminPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

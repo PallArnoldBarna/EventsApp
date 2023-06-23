@@ -62,25 +62,25 @@ struct SignUpPageView: View {
                 .modifier(ButtonModifier())
                 .popup(isPresented: $showingPopup) {
                     if username.isEmpty {
-                        PopupView(popupText: "Username field is empty!")
+                        PopupView(popupText: "Username field is empty!", backgroundColor: .red)
                     }
                     else if email.isEmpty {
-                        PopupView(popupText: "Email field is empty!")
+                        PopupView(popupText: "Email field is empty!", backgroundColor: .red)
                     }
                     else if email.isValidEmailAddress(email: email) == false {
-                        PopupView(popupText: "Email format wrong!")
+                        PopupView(popupText: "Email format wrong!", backgroundColor: .red)
                     }
                     else if password.isEmpty {
-                        PopupView(popupText: "Password field is empty!")
+                        PopupView(popupText: "Password field is empty!", backgroundColor: .red)
                     }
                     else if password.count < 6 {
-                        PopupView(popupText: "Password length is smaller then the minimum!")
+                        PopupView(popupText: "Password length is smaller then the minimum!", backgroundColor: .red)
                     }
                     else if passwordAgain.isEmpty {
-                        PopupView(popupText: "Password again field is empty!")
+                        PopupView(popupText: "Password again field is empty!", backgroundColor: .red)
                     }
                     else if password != passwordAgain {
-                        PopupView(popupText: "The 2 passwords are not the same!")
+                        PopupView(popupText: "The 2 passwords are not the same!", backgroundColor: .red)
                     }
                 } customize: {
                     $0.autohideIn(2)

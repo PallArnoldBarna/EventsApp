@@ -9,7 +9,41 @@ import SwiftUI
 
 struct AdminPageView: View {
     var body: some View {
-        Text("Admin page")
+        VStack {
+            NavigationLink(destination: AddEventPageView()) {
+                HStack(spacing: 22) {
+                    Image(systemName: "plus.app.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.primary)
+                    
+                    Text("Add new event")
+                        .foregroundColor(.primary)
+                }
+                .padding(.leading, 30)
+                Spacer()
+            }
+            .padding(.bottom, 25)
+            
+            NavigationLink(destination: AddUserPageView()) {
+                HStack(spacing: 22) {
+                    Image(systemName: "person.fill.badge.plus")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.primary)
+                    
+                    Text("Add new user")
+                        .foregroundColor(.primary)
+                }
+                .padding(.leading, 30)
+                Spacer()
+            }
+            .padding(.bottom, 25)
+            
+            Spacer()
+        }
+        .padding(.top, 25)
+        .navigationBarTitle("Admin page", displayMode: .inline)
     }
 }
 

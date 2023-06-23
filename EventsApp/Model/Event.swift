@@ -8,11 +8,11 @@
 import Foundation
 
 enum EventCategories {
-    static let conference: String = "conference"
-    static let sport: String = "sport"
-    static let festival: String = "festival"
-    static let party: String = "party"
-    static let cultural: String = "cultural"
+    static let conference: String = "Conference"
+    static let sport: String = "Sport"
+    static let festival: String = "Festival"
+    static let party: String = "Party"
+    static let cultural: String = "Cultural"
 }
 
 enum EventFilterTypes {
@@ -32,5 +32,5 @@ struct Event: Codable {
     var image: String
     var longitude: Double
     var latitude: Double
-    var category: [String]
+    var category: String
 }
