@@ -10,6 +10,7 @@ import SwiftUI
 struct EventListView: View {
     let navbarTitle: String
     @State var tabIndex = 1
+    @EnvironmentObject var getEventsViewModel: GetEventsViewModel
        
        var body: some View {
            VStack{
@@ -19,8 +20,18 @@ struct EventListView: View {
                    Text("First")
                }
                else if tabIndex == 1 {
-                   Spacer()
-                   Text("Second")
+                   List(getEventsViewModel.events, id: \.name) { event in
+                       ZStack {
+                           NavigationLink(destination: EventDetailView(event: event)) {
+                               EmptyView()
+                           }
+                           .opacity(0.0)
+                           .buttonStyle(PlainButtonStyle())
+                           
+                           EventRowView(event: event)
+                       }
+                   }
+                   .listStyle(.inset)
                }
                else if tabIndex == 2 {
                    Spacer()

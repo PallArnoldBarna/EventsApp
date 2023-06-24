@@ -30,6 +30,9 @@
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189E10FA2A4602D5001CBD93 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10F92A4602D5001CBD93 /* ImagePicker.swift */; };
+		189E10FC2A4757D1001CBD93 /* GetEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */; };
+		189E10FE2A4758BF001CBD93 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FD2A4758BF001CBD93 /* EventRowView.swift */; };
+		189E11002A4763BD001CBD93 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FF2A4763BD001CBD93 /* EventDetailView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
 		18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C729E087C30086B535 /* LoginViewModel.swift */; };
 		18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C929E087D70086B535 /* SignUpViewModel.swift */; };
@@ -67,6 +70,9 @@
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189E10F92A4602D5001CBD93 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsViewModel.swift; sourceTree = "<group>"; };
+		189E10FD2A4758BF001CBD93 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
+		189E10FF2A4763BD001CBD93 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18A6C8C729E087C30086B535 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18A6C8C929E087D70086B535 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +188,8 @@
 				18569CA02A4477EE007A3CE7 /* PopupView.swift */,
 				18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */,
 				18569CA62A45A818007A3CE7 /* AddUserPageView.swift */,
+				189E10FD2A4758BF001CBD93 /* EventRowView.swift */,
+				189E10FF2A4763BD001CBD93 /* EventDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				18A6C8C929E087D70086B535 /* SignUpViewModel.swift */,
 				18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */,
 				18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */,
+				189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -335,7 +344,9 @@
 				182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */,
 				189E10FA2A4602D5001CBD93 /* ImagePicker.swift in Sources */,
 				18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */,
+				189E10FC2A4757D1001CBD93 /* GetEventsViewModel.swift in Sources */,
 				182E35A129CB884700360734 /* CardView.swift in Sources */,
+				189E10FE2A4758BF001CBD93 /* EventRowView.swift in Sources */,
 				189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */,
 				18569CA72A45A818007A3CE7 /* AddUserPageView.swift in Sources */,
 				186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */,
@@ -354,6 +365,7 @@
 				182E359F29CB847100360734 /* Extensions.swift in Sources */,
 				18A6C8CD29E1BD110086B535 /* EdgeBorder.swift in Sources */,
 				18A6C8CF29E1BD490086B535 /* TabBarButton.swift in Sources */,
+				189E11002A4763BD001CBD93 /* EventDetailView.swift in Sources */,
 				18A6C8D129E1BD820086B535 /* CustomTopTabBar.swift in Sources */,
 				18569CA32A45A45C007A3CE7 /* AddEventPageView.swift in Sources */,
 				18D18A2829D8A1E9000D6CBB /* AdminPageView.swift in Sources */,

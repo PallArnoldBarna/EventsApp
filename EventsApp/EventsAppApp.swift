@@ -19,11 +19,13 @@ struct EventsAppApp: App {
             let signUpViewModel = SignUpViewModel(loginViewModel: loginViewModel)
             let addUserViewModel = AddUserViewModel()
             let addEventViewModel = AddEventViewModel()
+            let getEventsViewModel = GetEventsViewModel()
             ContentView()
                 .environmentObject(loginViewModel)
                 .environmentObject(signUpViewModel)
                 .environmentObject(addUserViewModel)
                 .environmentObject(addEventViewModel)
+                .environmentObject(getEventsViewModel)
         }
     }
 }

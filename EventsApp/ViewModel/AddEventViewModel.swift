@@ -18,7 +18,7 @@ class AddEventViewModel: ObservableObject {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(event)
             let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
-            ref.child("Events").child("1").setValue(jsonObject)
+            ref.child("Events").childByAutoId().setValue(jsonObject)
         } catch {
             print("Error occured")
         }
