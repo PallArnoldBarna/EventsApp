@@ -33,4 +33,5 @@ struct Event: Codable {
     var longitude: Double
     var latitude: Double
     var category: String
+    var isFavourite: Bool
 }

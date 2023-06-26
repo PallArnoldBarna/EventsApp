@@ -72,19 +72,6 @@ struct AddEventPageView: View {
                         isImagePickerPresented = true
                     }
                     
-                    TextField("Longitude", text: $longitude)
-                        .keyboardType(.numberPad)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .onReceive(Just(longitude)) { newValue in
-                            let filtered = newValue.filter { "0123456789,.".contains($0) }
-                            if filtered != newValue {
-                                longitude = filtered
-                            }
-                        }
-                    
                     TextField("Latitude", text: $latitude)
                         .keyboardType(.numberPad)
                         .disableAutocorrection(true)
@@ -98,6 +85,18 @@ struct AddEventPageView: View {
                             }
                         }
                     
+                    TextField("Longitude", text: $longitude)
+                        .keyboardType(.numberPad)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                        .padding()
+                        .background(Color(.secondarySystemBackground))
+                        .onReceive(Just(longitude)) { newValue in
+                            let filtered = newValue.filter { "0123456789,.".contains($0) }
+                            if filtered != newValue {
+                                longitude = filtered
+                            }
+                        }
                     
                 }
                 .padding()
@@ -131,7 +130,7 @@ struct AddEventPageView: View {
                         }
                         doubleValueLongitude = doubleLongitude
                         doubleValueLatitude = doubleLatitude
-                        let event = Event(name: name, description: description, startDate: startDate, endDate: endDate, image: imageBase64!, longitude: doubleValueLongitude, latitude: doubleValueLatitude, category: selectedCategory!)
+                        let event = Event(name: name, description: description, startDate: startDate, endDate: endDate, image: imageBase64!, longitude: doubleValueLongitude, latitude: doubleValueLatitude, category: selectedCategory!, isFavourite: false)
                         addNewEventViewModel.addEventToDatabase(event: event)
                     }, label: {
                         Text("Add new event")

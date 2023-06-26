@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct FavouriteEventsPageView: View {
+    @EnvironmentObject var getFavouriteEventsViewModel: GetFavouriteEventsViewModel
+    
     var body: some View {
-        Text("Favourites page")
-            .navigationTitle("Home")
+        VStack {
+            List(getFavouriteEventsViewModel.favouriteEvents, id: \.name) { event in
+                ZStack {
+                    NavigationLink(destination: EventDetailView(event: event)) {
+                        EmptyView()
+                    }
+                    .opacity(0.0)
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    EventRowView(event: event)
+                }
+            }
+            .listStyle(.inset)
+        }
     }
 }
 

@@ -33,6 +33,8 @@
 		189E10FC2A4757D1001CBD93 /* GetEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */; };
 		189E10FE2A4758BF001CBD93 /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FD2A4758BF001CBD93 /* EventRowView.swift */; };
 		189E11002A4763BD001CBD93 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FF2A4763BD001CBD93 /* EventDetailView.swift */; };
+		189E11022A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */; };
+		189E11062A49E175001CBD93 /* GetFavouriteEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
 		18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C729E087C30086B535 /* LoginViewModel.swift */; };
 		18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C929E087D70086B535 /* SignUpViewModel.swift */; };
@@ -73,6 +75,8 @@
 		189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsViewModel.swift; sourceTree = "<group>"; };
 		189E10FD2A4758BF001CBD93 /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		189E10FF2A4763BD001CBD93 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndRemoveFavouriteEventsViewModel.swift; sourceTree = "<group>"; };
+		189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouriteEventsViewModel.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18A6C8C729E087C30086B535 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18A6C8C929E087D70086B535 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */,
 				18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */,
 				189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */,
+				189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */,
+				189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				182F754829BD031F00D0F751 /* SignUpPageView.swift in Sources */,
 				182E359B29CB81CE00360734 /* User.swift in Sources */,
 				18A6C8D329E1BDD30086B535 /* EventListView.swift in Sources */,
+				189E11022A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift in Sources */,
 				18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */,
 				18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
@@ -361,6 +368,7 @@
 				182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */,
 				182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */,
 				182E359D29CB82A200360734 /* Event.swift in Sources */,
+				189E11062A49E175001CBD93 /* GetFavouriteEventsViewModel.swift in Sources */,
 				18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */,
 				182E359F29CB847100360734 /* Extensions.swift in Sources */,
 				18A6C8CD29E1BD110086B535 /* EdgeBorder.swift in Sources */,

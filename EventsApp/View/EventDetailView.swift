@@ -13,8 +13,8 @@ struct EventDetailView: View {
     @State var event: Event
     @State var startDateString: String?
     @State var endDateString: String?
-    @State var isFavorite = false
     @State var favouriteButtonPressed = false
+    @EnvironmentObject var addAndRemoveFavouriteEventsViewModel: AddAndRemoveFavouriteEventsViewModel
     
     var body: some View {
         ScrollView(.vertical) {
@@ -22,7 +22,7 @@ struct EventDetailView: View {
                 Image(uiImage: (event.image.imageFromBase64 ?? UIImage(systemName: "x.circle.fill"))!)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200.0, height: 200.0, alignment: .center)
+                    .frame(width: 400, height: 400, alignment: .center)
                     .padding(.bottom, 25)
                 HStack {
                     Text(event.name)
@@ -30,10 +30,16 @@ struct EventDetailView: View {
                         .fontWeight(.heavy)
                     Spacer()
                     Button(action: {
-                        self.isFavorite.toggle()
+                        event.isFavourite.toggle()
                         self.favouriteButtonPressed.toggle()
+                        if event.isFavourite == true {
+                            self.addAndRemoveFavouriteEventsViewModel.fetchNodeIdForEvent(event: event)
+                        }
+                        else if event.isFavourite == false {
+                            self.addAndRemoveFavouriteEventsViewModel.fetchNodeIdForFavouriteEvent(event: event)
+                        }
                     }, label: {
-                        Image(systemName: isFavorite ? "star.fill" : "star")
+                        Image(systemName: event.isFavourite ? "star.fill" : "star")
                             .resizable()
                             .scaledToFit()
                             .foregroundColor(.yellow)
@@ -41,7 +47,7 @@ struct EventDetailView: View {
                             .padding(.trailing, 10)
                     })
                     .popup(isPresented: $favouriteButtonPressed) {
-                        if isFavorite {
+                        if event.isFavourite {
                             PopupView(popupText: "Event added to favorites!", backgroundColor: .green)
                         } else {
                             PopupView(popupText: "Event removed from favorites", backgroundColor: .red)
@@ -117,6 +123,6 @@ struct EventDetailView: View {
 
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailView(event: Event(name: "Test", description: "Lorem ", startDate: Date(), endDate: Date(), image: "app_icon", longitude: 123, latitude: 456, category: "Sport"))
+        EventDetailView(event: Event(name: "Test", description: "Lorem ", startDate: Date(), endDate: Date(), image: "app_icon", longitude: 123, latitude: 456, category: "Sport", isFavourite: true))
     }
 }
