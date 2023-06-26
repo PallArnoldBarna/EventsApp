@@ -14,7 +14,7 @@ struct EventRowView: View {
     
     var body: some View {
         HStack {
-            Image(uiImage: event.image.imageFromBase64!)
+            Image(uiImage: (event.image.imageFromBase64 ?? UIImage(systemName: "x.circle.fill"))!)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50.0, height: 50.0, alignment: .center)
@@ -27,7 +27,6 @@ struct EventRowView: View {
                         convertDateToString()
                     }
             }
-            //.padding(.horizontal)
             Spacer()
         }
     }

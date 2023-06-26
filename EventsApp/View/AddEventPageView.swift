@@ -52,11 +52,11 @@ struct AddEventPageView: View {
                         .padding()
                         .background(Color(.secondarySystemBackground))
                     
-                    DatePicker("Start date", selection: $startDate)
+                    DatePicker("Start date", selection: $startDate, displayedComponents: [.date])
                         .padding(.horizontal)
                         .padding(.top, 20)
                     
-                    DatePicker("End date", selection: $endDate)
+                    DatePicker("End date", selection: $endDate, displayedComponents: [.date])
                         .padding(.horizontal)
                         .padding(.vertical, 20)
                     
@@ -72,7 +72,7 @@ struct AddEventPageView: View {
                         isImagePickerPresented = true
                     }
                     
-                    TextField("Name", text: $longitude)
+                    TextField("Longitude", text: $longitude)
                         .keyboardType(.numberPad)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
@@ -85,7 +85,7 @@ struct AddEventPageView: View {
                             }
                         }
                     
-                    TextField("Name", text: $latitude)
+                    TextField("Latitude", text: $latitude)
                         .keyboardType(.numberPad)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)

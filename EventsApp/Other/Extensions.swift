@@ -51,7 +51,7 @@ extension String {
 
 extension UIImage {
     var imageToBase64: String? {
-        self.jpegData(compressionQuality: 0.5)?.base64EncodedString()
+        self.jpegData(compressionQuality: 0.7)?.base64EncodedString()
     }
 }
 
@@ -68,7 +68,6 @@ extension Date {
     func convertToString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        //dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         return dateFormatter.string(from: self)
     }

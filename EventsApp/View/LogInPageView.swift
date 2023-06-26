@@ -13,13 +13,14 @@ struct LogInPageView: View {
     @State var password = ""
     @State private var showingPopup = false
     @EnvironmentObject var loginViewModel: LoginViewModel
+    @AppStorage("loginPassword") var loginPassword = ""
     
     var body: some View {
         VStack {
             
             Spacer()
             VStack {
-                //Spacer()
+                
                 Text("Login")
                     .fontWeight(.bold)
                     .font(.largeTitle)
@@ -41,6 +42,7 @@ struct LogInPageView: View {
                 
                 Button(action: {
                     self.showingPopup = true
+                    loginPassword = password
                     loginViewModel.logIn(email: email, password: password)
                 }, label: {
                     Text("Login")
@@ -54,10 +56,10 @@ struct LogInPageView: View {
                     else if email.isValidEmailAddress(email: email) == false {
                         PopupView(popupText: "Email format wrong!", backgroundColor: .red)
                     }
-                    else if password.isEmpty {
+                    else if loginPassword.isEmpty {
                         PopupView(popupText: "Password field is empty!", backgroundColor: .red)
                     }
-                    else if password.count < 6 {
+                    else if loginPassword.count < 6 {
                         PopupView(popupText: "Password length is smaller then the minimum!", backgroundColor: .red)
                     }
                 }

@@ -15,6 +15,8 @@ struct AddUserPageView: View {
     @State var passwordAgain = ""
     @State private var showingPopup = false
     @EnvironmentObject var addUserViewModel: AddUserViewModel
+    @AppStorage("signupPassword") var signupPassword = ""
+    @AppStorage("signupPasswordAgain") var signupPasswordAgain = ""
     
     var body: some View {
         VStack {
@@ -52,6 +54,8 @@ struct AddUserPageView: View {
                 
                 Button(action: {
                     self.showingPopup.toggle()
+                    signupPassword = password
+                    signupPasswordAgain = passwordAgain
                     let emptyList: [Event] = []
                     let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
                     addUserViewModel.createUser(email: email, password: password, user: user)
@@ -69,16 +73,16 @@ struct AddUserPageView: View {
                     else if email.isValidEmailAddress(email: email) == false {
                         PopupView(popupText: "Email format wrong!", backgroundColor: .red)
                     }
-                    else if password.isEmpty {
+                    else if signupPassword.isEmpty {
                         PopupView(popupText: "Password field is empty!", backgroundColor: .red)
                     }
-                    else if password.count < 6 {
+                    else if signupPassword.count < 6 {
                         PopupView(popupText: "Password length is smaller then the minimum!", backgroundColor: .red)
                     }
-                    else if passwordAgain.isEmpty {
+                    else if signupPasswordAgain.isEmpty {
                         PopupView(popupText: "Password again field is empty!", backgroundColor: .red)
                     }
-                    else if password != passwordAgain {
+                    else if signupPassword != signupPasswordAgain {
                         PopupView(popupText: "The 2 passwords are not the same!", backgroundColor: .red)
                     }
                     else {
