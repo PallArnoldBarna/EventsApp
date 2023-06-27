@@ -30,8 +30,6 @@ struct Event: Codable {
     var startDate: Date
     var endDate: Date
     var image: String
-    var longitude: Double
-    var latitude: Double
+    var locationAddress: String
     var category: String
-    var isFavourite: Bool
 }

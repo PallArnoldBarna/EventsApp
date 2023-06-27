@@ -35,6 +35,7 @@
 		189E11002A4763BD001CBD93 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10FF2A4763BD001CBD93 /* EventDetailView.swift */; };
 		189E11022A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */; };
 		189E11062A49E175001CBD93 /* GetFavouriteEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */; };
+		189E11082A4AE955001CBD93 /* FavouriteEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E11072A4AE955001CBD93 /* FavouriteEventDetailView.swift */; };
 		189ED96B29BB94C700754FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189ED96A29BB94C700754FEC /* GoogleService-Info.plist */; };
 		18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C729E087C30086B535 /* LoginViewModel.swift */; };
 		18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6C8C929E087D70086B535 /* SignUpViewModel.swift */; };
@@ -77,6 +78,7 @@
 		189E10FF2A4763BD001CBD93 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndRemoveFavouriteEventsViewModel.swift; sourceTree = "<group>"; };
 		189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavouriteEventsViewModel.swift; sourceTree = "<group>"; };
+		189E11072A4AE955001CBD93 /* FavouriteEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventDetailView.swift; sourceTree = "<group>"; };
 		189ED96A29BB94C700754FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18A6C8C729E087C30086B535 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18A6C8C929E087D70086B535 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				18569CA62A45A818007A3CE7 /* AddUserPageView.swift */,
 				189E10FD2A4758BF001CBD93 /* EventRowView.swift */,
 				189E10FF2A4763BD001CBD93 /* EventDetailView.swift */,
+				189E11072A4AE955001CBD93 /* FavouriteEventDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				189E11062A49E175001CBD93 /* GetFavouriteEventsViewModel.swift in Sources */,
 				18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */,
 				182E359F29CB847100360734 /* Extensions.swift in Sources */,
+				189E11082A4AE955001CBD93 /* FavouriteEventDetailView.swift in Sources */,
 				18A6C8CD29E1BD110086B535 /* EdgeBorder.swift in Sources */,
 				18A6C8CF29E1BD490086B535 /* TabBarButton.swift in Sources */,
 				189E11002A4763BD001CBD93 /* EventDetailView.swift in Sources */,

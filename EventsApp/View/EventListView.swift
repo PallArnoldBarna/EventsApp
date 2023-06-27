@@ -17,89 +17,125 @@ struct EventListView: View {
             CustomTopTabBar(tabIndex: $tabIndex)
             if tabIndex == 0 {
                 if eventType == "All events" {
-                    List(filteredEventsPrevious, id: \.name) { event in
-                        ZStack {
-                            NavigationLink(destination: EventDetailView(event: event)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            EventRowView(event: event)
-                        }
+                    if filteredEventsPrevious.count == 0 {
+                        Spacer()
+                        Text("No previous events")
                     }
-                    .listStyle(.inset)
+                    else {
+                        List(filteredEventsPrevious, id: \.name) { event in
+                            ZStack {
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                EventRowView(event: event)
+                            }
+                        }
+                        .listStyle(.inset)
+                    }
                 } else if eventType != "All events" {
-                    List(filteredEventsPreviousByType, id: \.name) { event in
-                        ZStack {
-                            NavigationLink(destination: EventDetailView(event: event)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            EventRowView(event: event)
-                        }
+                    if filteredEventsPreviousByType.count == 0 {
+                        Spacer()
+                        Text("No previous events")
                     }
-                    .listStyle(.inset)
+                    else {
+                        List(filteredEventsPreviousByType, id: \.name) { event in
+                            ZStack {
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                EventRowView(event: event)
+                            }
+                        }
+                        .listStyle(.inset)
+                    }
                 }
             }
             else if tabIndex == 1 {
                 if eventType == "All events" {
-                    List(filteredEventsCurrent, id: \.name) { event in
-                        ZStack {
-                            NavigationLink(destination: EventDetailView(event: event)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            EventRowView(event: event)
-                        }
+                    if filteredEventsCurrent.count == 0 {
+                        Spacer()
+                        Text("No current events")
                     }
-                    .listStyle(.inset)
+                    else {
+                        List(filteredEventsCurrent, id: \.name) { event in
+                            ZStack {
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                EventRowView(event: event)
+                            }
+                        }
+                        .listStyle(.inset)
+                    }
                 } else if eventType != "All events" {
-                    List(filteredEventsCurrentByType, id: \.name) { event in
-                        ZStack {
-                            NavigationLink(destination: EventDetailView(event: event)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            EventRowView(event: event)
-                        }
+                    if filteredEventsCurrentByType.count == 0 {
+                        Spacer()
+                        Text("No current events")
                     }
-                    .listStyle(.inset)
+                    else {
+                        List(filteredEventsCurrentByType, id: \.name) { event in
+                            ZStack {
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                EventRowView(event: event)
+                            }
+                        }
+                        .listStyle(.inset)
+                    }
                 }
             }
             else if tabIndex == 2 {
                 if eventType == "All events" {
-                    List(filteredEventsUpcoming, id: \.name) { event in
-                        ZStack {
-                            NavigationLink(destination: EventDetailView(event: event)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            EventRowView(event: event)
-                        }
+                    if filteredEventsUpcoming.count == 0 {
+                        Spacer()
+                        Text("No upcoming events")
                     }
-                    .listStyle(.inset)
+                    else {
+                        List(filteredEventsUpcoming, id: \.name) { event in
+                            ZStack {
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                EventRowView(event: event)
+                            }
+                        }
+                        .listStyle(.inset)
+                    }
                 } else if eventType != "All events" {
-                    List(filteredEventsUpcomingByType, id: \.name) { event in
-                        ZStack {
-                            NavigationLink(destination: EventDetailView(event: event)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            EventRowView(event: event)
-                        }
+                    if filteredEventsUpcomingByType.count == 0 {
+                        Spacer()
+                        Text("No upcoming events")
                     }
-                    .listStyle(.inset)
+                    else {
+                        List(filteredEventsUpcomingByType, id: \.name) { event in
+                            ZStack {
+                                NavigationLink(destination: EventDetailView(event: event)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                
+                                EventRowView(event: event)
+                            }
+                        }
+                        .listStyle(.inset)
+                    }
                 }
             }
             Spacer()

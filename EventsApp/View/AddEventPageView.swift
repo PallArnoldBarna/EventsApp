@@ -15,8 +15,7 @@ struct AddEventPageView: View {
     @State private var endDate = Date()
     @State private var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
-    @State var longitude = ""
-    @State var latitude = ""
+    @State var locationAddress = ""
     @State private var doubleValueLongitude: Double = 0.0
     @State private var doubleValueLatitude: Double = 0.0
     @State private var selectedCategory: String?
@@ -52,11 +51,11 @@ struct AddEventPageView: View {
                         .padding()
                         .background(Color(.secondarySystemBackground))
                     
-                    DatePicker("Start date", selection: $startDate, displayedComponents: [.date])
+                    DatePicker("Start date", selection: $startDate)
                         .padding(.horizontal)
                         .padding(.top, 20)
                     
-                    DatePicker("End date", selection: $endDate, displayedComponents: [.date])
+                    DatePicker("End date", selection: $endDate)
                         .padding(.horizontal)
                         .padding(.vertical, 20)
                     
@@ -72,31 +71,11 @@ struct AddEventPageView: View {
                         isImagePickerPresented = true
                     }
                     
-                    TextField("Latitude", text: $latitude)
-                        .keyboardType(.numberPad)
+                    TextField("Address", text: $locationAddress)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .padding()
                         .background(Color(.secondarySystemBackground))
-                        .onReceive(Just(latitude)) { newValue in
-                            let filtered = newValue.filter { "0123456789,.".contains($0) }
-                            if filtered != newValue {
-                                latitude = filtered
-                            }
-                        }
-                    
-                    TextField("Longitude", text: $longitude)
-                        .keyboardType(.numberPad)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .onReceive(Just(longitude)) { newValue in
-                            let filtered = newValue.filter { "0123456789,.".contains($0) }
-                            if filtered != newValue {
-                                longitude = filtered
-                            }
-                        }
                     
                 }
                 .padding()
@@ -124,13 +103,7 @@ struct AddEventPageView: View {
                     Button(action: {
                         self.showingPopup = true
                         let imageBase64 = selectedImage?.imageToBase64
-                        guard let doubleLongitude = Double(longitude),
-                              let doubleLatitude = Double(latitude) else {
-                            return
-                        }
-                        doubleValueLongitude = doubleLongitude
-                        doubleValueLatitude = doubleLatitude
-                        let event = Event(name: name, description: description, startDate: startDate, endDate: endDate, image: imageBase64!, longitude: doubleValueLongitude, latitude: doubleValueLatitude, category: selectedCategory!, isFavourite: false)
+                        let event = Event(name: name, description: description, startDate: startDate, endDate: endDate, image: imageBase64!, locationAddress: locationAddress, category: selectedCategory!)
                         addNewEventViewModel.addEventToDatabase(event: event)
                     }, label: {
                         Text("Add new event")

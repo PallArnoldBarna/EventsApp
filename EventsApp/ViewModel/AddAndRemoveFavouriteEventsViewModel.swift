@@ -18,7 +18,6 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
     
     func addEventToFavourites(event: Event) {
         do {
-            self.updateEvent(isFavourite: event.isFavourite, nodeId: eventNodeId)
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(event)
             let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
@@ -52,11 +51,11 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
             }
             
             self.favouriteEventNodeId = node.key
-            self.removeDataFromDatabase(nodeId: self.favouriteEventNodeId, isFavourite: event.isFavourite)
+            self.removeDataFromDatabase(nodeId: self.favouriteEventNodeId)
         }
     }
     
-    func removeDataFromDatabase(nodeId: String, isFavourite: Bool) {
+    func removeDataFromDatabase(nodeId: String) {
         let nodeRef = ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").child(nodeId)
         
         nodeRef.removeValue { error, _ in
@@ -66,18 +65,16 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
                 print("Data removed successfully")
             }
         }
-        self.updateEvent(isFavourite: isFavourite, nodeId: nodeId)
-        
     }
     
-    func updateEvent(isFavourite: Bool, nodeId: String) {
-        ref.child("Events").child(nodeId).updateChildValues(["isFavourite": isFavourite]) { error, _ in
-            if let error = error {
-                print("Failed to update data: \(error)")
-            } else {
-                print("Data updated successfully")
-            }
-        }
-    }
+//    func updateEvent(isFavourite: Bool, nodeId: String) {
+//        ref.child("Events").child(nodeId).updateChildValues(["isFavourite": isFavourite]) { error, _ in
+//            if let error = error {
+//                print("Failed to update data: \(error)")
+//            } else {
+//                print("Data updated successfully")
+//            }
+//        }
+//    }
     
 }

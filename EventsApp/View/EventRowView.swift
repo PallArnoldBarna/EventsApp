@@ -42,6 +42,6 @@ struct EventRowView: View {
 
 struct EventRowView_Previews: PreviewProvider {
     static var previews: some View {
-        EventRowView(event: Event(name: "Test", description: "Test", startDate: Date(), endDate: Date(), image: "", longitude: 123, latitude: 456, category: "Sport", isFavourite: true))
+        EventRowView(event: Event(name: "Test", description: "Test", startDate: Date(), endDate: Date(), image: "", locationAddress: "Strada Livezeni, 41", category: "Sport"))
     }
 }

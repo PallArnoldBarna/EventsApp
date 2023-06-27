@@ -16,22 +16,26 @@ struct SettingsPageView: View {
             self.showAlert.toggle()
             
         }, label: {
-            HStack {
-                Spacer()
-                Image(systemName: "rectangle.portrait.and.arrow.right")
+            HStack(spacing: 22) {
+                Image(systemName: "rectangle.portrait.and.arrow.right.fill")
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.primary)
+                
                 Text("Sign out")
-                Spacer()
+                    .foregroundColor(.primary)
             }
+            .padding(.leading, 30)
+            Spacer()
         })
-        .modifier(ButtonModifier())
-        .padding()
         .alert(isPresented: $showAlert) {
             return Alert(title: Text("Sign out"), message: Text("Do you want to sign out?"), primaryButton: .destructive(Text("Sign out")) {
                 loginViewModel.signOut()
             }, secondaryButton: .cancel(Text("Cancel")))
         }
+        .padding(.top, 25)
+        .navigationBarTitle("Settings", displayMode: .inline)
+        Spacer()
     }
 }
 

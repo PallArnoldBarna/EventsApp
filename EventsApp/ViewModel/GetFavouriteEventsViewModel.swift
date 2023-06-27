@@ -14,6 +14,7 @@ class GetFavouriteEventsViewModel: ObservableObject {
     let ref = Database.database().reference()
     
     @Published var favouriteEvents: [Event] = []
+    @Published var favouriteEventsCount: Int = 0
     
     init() {
         fetchData()
@@ -35,6 +36,7 @@ class GetFavouriteEventsViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 self.favouriteEvents = favouriteEvents
+                self.favouriteEventsCount = favouriteEvents.count
             }
         }
     }

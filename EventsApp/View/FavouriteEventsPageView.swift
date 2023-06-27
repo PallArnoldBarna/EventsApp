@@ -12,18 +12,27 @@ struct FavouriteEventsPageView: View {
     
     var body: some View {
         VStack {
-            List(getFavouriteEventsViewModel.favouriteEvents, id: \.name) { event in
-                ZStack {
-                    NavigationLink(destination: EventDetailView(event: event)) {
-                        EmptyView()
-                    }
-                    .opacity(0.0)
-                    .buttonStyle(PlainButtonStyle())
-                    
-                    EventRowView(event: event)
-                }
+            if getFavouriteEventsViewModel.favouriteEventsCount == 0 {
+                Text("No favourite events")
             }
-            .listStyle(.inset)
+            else {
+                List(getFavouriteEventsViewModel.favouriteEvents, id: \.name) { event in
+                    ZStack {
+                        NavigationLink(destination: FavouriteEventDetailView(event: event)) {
+                            EmptyView()
+                        }
+                        .opacity(0.0)
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        EventRowView(event: event)
+                    }
+                }
+                .listStyle(.inset)
+            }
+        }
+        .navigationBarTitle("Favourite events", displayMode: .inline)
+        .onAppear{
+            getFavouriteEventsViewModel.fetchData()
         }
     }
 }

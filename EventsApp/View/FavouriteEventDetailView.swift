@@ -1,8 +1,8 @@
 //
-//  EventDetailView.swift
+//  FavouriteEventDetailView.swift
 //  EventsApp
 //
-//  Created by Páll Arnold-Barna on 24.06.2023.
+//  Created by Páll Arnold-Barna on 27.06.2023.
 //
 
 import SwiftUI
@@ -10,7 +10,7 @@ import ExytePopupView
 import MapKit
 import CoreLocation
 
-struct EventDetailView: View {
+struct FavouriteEventDetailView: View {
     @State var event: Event
     @State var startDateString: String?
     @State var endDateString: String?
@@ -32,18 +32,17 @@ struct EventDetailView: View {
                     Spacer()
                     Button(action: {
                         self.favouriteButtonPressed = true
-                        self.addAndRemoveFavouriteEventsViewModel.fetchNodeIdForEvent(event: event)
+                        self.addAndRemoveFavouriteEventsViewModel.fetchNodeIdForFavouriteEvent(event: event)
                     }, label: {
-                        Text("Add to favourites")
+                        Text("Remove from favourites")
                             .foregroundColor(.white)
                             .frame(width: 100, height: 50)
                             .background(.blue)
                             .cornerRadius(45)
                     })
                     .disabled(favouriteButtonPressed)
-                    
                     .popup(isPresented: $favouriteButtonPressed) {
-                        PopupView(popupText: "Event added to favourites!", backgroundColor: .green)
+                        PopupView(popupText: "Event removed from favourites!", backgroundColor: .red)
                     } customize: {
                         $0.autohideIn(1)
                             .type(.toast)
@@ -137,8 +136,8 @@ struct EventDetailView: View {
     }
 }
 
-struct EventDetailView_Previews: PreviewProvider {
+struct FavouriteEventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailView(event: Event(name: "Test", description: "Lorem ", startDate: Date(), endDate: Date(), image: "app_icon", locationAddress: "Strada Livezeni, 41", category: "Sport"))
+        FavouriteEventDetailView(event: Event(name: "Test", description: "Lorem ", startDate: Date(), endDate: Date(), image: "app_icon", locationAddress: "Strada Livezeni, 41", category: "Sport"))
     }
 }

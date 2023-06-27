@@ -51,7 +51,7 @@ extension String {
 
 extension UIImage {
     var imageToBase64: String? {
-        self.jpegData(compressionQuality: 0.7)?.base64EncodedString()
+        self.jpegData(compressionQuality: 0.1)?.base64EncodedString()
     }
 }
 
