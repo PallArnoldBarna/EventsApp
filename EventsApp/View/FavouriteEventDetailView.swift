@@ -16,6 +16,7 @@ struct FavouriteEventDetailView: View {
     @State var endDateString: String?
     @State var favouriteButtonPressed = false
     @EnvironmentObject var addAndRemoveFavouriteEventsViewModel: AddAndRemoveFavouriteEventsViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ScrollView(.vertical) {
@@ -33,23 +34,16 @@ struct FavouriteEventDetailView: View {
                     Button(action: {
                         self.favouriteButtonPressed = true
                         self.addAndRemoveFavouriteEventsViewModel.fetchNodeIdForFavouriteEvent(event: event)
+                        presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Text("Remove from favourites")
-                            .foregroundColor(.white)
-                            .frame(width: 100, height: 50)
-                            .background(.blue)
-                            .cornerRadius(45)
+                        Image(systemName: "minus.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.red)
+                            .frame(width: 40.0, height: 40.0, alignment: .center)
+                            .padding(.trailing, 10)
                     })
                     .disabled(favouriteButtonPressed)
-                    .popup(isPresented: $favouriteButtonPressed) {
-                        PopupView(popupText: "Event removed from favourites!", backgroundColor: .red)
-                    } customize: {
-                        $0.autohideIn(1)
-                            .type(.toast)
-                            .position(.bottom)
-                            .animation(.spring())
-                            .closeOnTapOutside(true)
-                    }
                 }
                 .padding(.horizontal, 15)
                 .padding(.bottom, 15)
@@ -98,7 +92,6 @@ struct FavouriteEventDetailView: View {
                     })
                     .modifier(ButtonModifier())
                     .padding(.leading, 15)
-                    Spacer()
                 }
             }
         }

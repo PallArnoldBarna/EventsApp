@@ -23,6 +23,7 @@ struct HomePageView: View {
     @State private var showSideMenu = false
     @AppStorage("key") var darkMode: Bool = false
     @State private var isDataLoaded = false
+    @EnvironmentObject var getFavouriteEventsViewModel: GetFavouriteEventsViewModel
 
     var body: some View {
         
@@ -48,39 +49,86 @@ struct HomePageView: View {
                     }
                     .padding()
                     .foregroundColor(.primary)
-
-                    Spacer()
-                    VStack {
-                        HStack {
-                            NavigationLink(destination: EventListView(eventType: "All events")) {
-                                CardView(cardWidth: CGFloat(BigCardSizes.cardSize), cardHeight: CGFloat(BigCardSizes.cardSize), cardColor: .red, vStackSpacing: 10, cardImageString: "globe_icon", cardImageWidth: CGFloat(BigCardSizes.imageSize), cardImageHeight: CGFloat(BigCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
-                            }
-                            
-                            VStack() {
-                                NavigationLink(destination: EventListView(eventType: "Party")) {
-                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "party_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Party", cardTextColor: .white)
-                                }
-                                NavigationLink(destination: EventListView(eventType: "Festival")) {
-                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "festival_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Festival", cardTextColor: .white)
-                                }
-                            }
-                        }
-                        HStack() {
-                            NavigationLink(destination: EventListView(eventType: "Conference")) {
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "conference_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Conference", cardTextColor: .white)
-                            }
-                            
-                            NavigationLink(destination: EventListView(eventType: "Sport")) {
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "sport_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Sport", cardTextColor: .white)
-                            }
-                            
-                            NavigationLink(destination: EventListView(eventType: "Cultural")) {
-                                CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "cultural_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Cultural", cardTextColor: .white)
-                            }
-                        }
-                    }
                     
-                    Spacer()
+                    ScrollView {
+                        VStack {
+                            HStack {
+                                Text("Today")
+                                    .fontWeight(.bold)
+                                    .font(.largeTitle)
+                                    .padding(.leading, 30)
+                                Spacer()
+                            }
+                            VStack {
+                                if filteredFavouriteEventsToday.count == 0 {
+                                    Text("No favourite events yet")
+                                        .padding(.vertical, 30)
+                                }
+                                else {
+                                    ZStack {
+                                        Text("Loading")
+                                        List(filteredFavouriteEventsToday, id: \.name) { event in
+                                            ZStack {
+                                                NavigationLink(destination: FavouriteEventDetailView(event: event)) {
+                                                    EmptyView()
+                                                }
+                                                .opacity(0.0)
+                                                .buttonStyle(PlainButtonStyle())
+                                                
+                                                EventRowView(event: event)
+                                            }
+                                        }
+                                        .frame(height: 150)
+                                    .listStyle(.inset)
+                                    }
+                                }
+                            }
+                            .onAppear{
+                                getFavouriteEventsViewModel.fetchData()
+                            }
+                        }
+                        
+                        
+                        Spacer()
+                        VStack {
+                            HStack {
+                                Text("Check events")
+                                    .fontWeight(.bold)
+                                    .font(.largeTitle)
+                                    .padding(.leading, 30)
+                                Spacer()
+                            }
+                            HStack {
+                                NavigationLink(destination: EventListView(eventType: "All events")) {
+                                    CardView(cardWidth: CGFloat(BigCardSizes.cardSize), cardHeight: CGFloat(BigCardSizes.cardSize), cardColor: .red, vStackSpacing: 10, cardImageString: "globe_icon", cardImageWidth: CGFloat(BigCardSizes.imageSize), cardImageHeight: CGFloat(BigCardSizes.imageSize), cardImageColor: .white, cardText: "All events", cardTextColor: .white)
+                                }
+                                
+                                VStack() {
+                                    NavigationLink(destination: EventListView(eventType: "Party")) {
+                                        CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .blue, vStackSpacing: 10, cardImageString: "party_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Party", cardTextColor: .white)
+                                    }
+                                    NavigationLink(destination: EventListView(eventType: "Festival")) {
+                                        CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .yellow, vStackSpacing: 10, cardImageString: "festival_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Festival", cardTextColor: .white)
+                                    }
+                                }
+                            }
+                            HStack() {
+                                NavigationLink(destination: EventListView(eventType: "Conference")) {
+                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .orange, vStackSpacing: 10, cardImageString: "conference_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Conference", cardTextColor: .white)
+                                }
+                                
+                                NavigationLink(destination: EventListView(eventType: "Sport")) {
+                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .green, vStackSpacing: 10, cardImageString: "sport_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Sport", cardTextColor: .white)
+                                }
+                                
+                                NavigationLink(destination: EventListView(eventType: "Cultural")) {
+                                    CardView(cardWidth: CGFloat(SmallCardSizes.cardSize), cardHeight: CGFloat(SmallCardSizes.cardSize), cardColor: .purple, vStackSpacing: 10, cardImageString: "cultural_icon", cardImageWidth: CGFloat(SmallCardSizes.imageSize), cardImageHeight: CGFloat(SmallCardSizes.imageSize), cardImageColor: .white, cardText: "Cultural", cardTextColor: .white)
+                                }
+                            }
+                        }
+                        
+                        Spacer()
+                    }
                 }
                 
             }
@@ -99,6 +147,16 @@ struct HomePageView: View {
             DispatchQueue.main.async {
                 self.isDataLoaded = false
             }
+        }
+    }
+    
+    var filteredFavouriteEventsToday: [Event] {
+        let currentDate = Date()
+        
+        return getFavouriteEventsViewModel.favouriteEvents.filter {
+            let itemDay = Calendar.current.component(.day, from: $0.startDate)
+            let currentDay = Calendar.current.component(.day, from: currentDate)
+            return itemDay == currentDay
         }
     }
 }

@@ -16,6 +16,7 @@ struct EventDetailView: View {
     @State var endDateString: String?
     @State var favouriteButtonPressed = false
     @EnvironmentObject var addAndRemoveFavouriteEventsViewModel: AddAndRemoveFavouriteEventsViewModel
+    @State private var isButtonEnabled = true
     
     var body: some View {
         ScrollView(.vertical) {
@@ -31,16 +32,18 @@ struct EventDetailView: View {
                         .fontWeight(.heavy)
                     Spacer()
                     Button(action: {
+                        self.isButtonEnabled = false
                         self.favouriteButtonPressed = true
                         self.addAndRemoveFavouriteEventsViewModel.fetchNodeIdForEvent(event: event)
-                    }, label: {
-                        Text("Add to favourites")
-                            .foregroundColor(.white)
-                            .frame(width: 100, height: 50)
-                            .background(.blue)
-                            .cornerRadius(45)
-                    })
-                    .disabled(favouriteButtonPressed)
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.blue)
+                            .frame(width: 40.0, height: 40.0, alignment: .center)
+                            .padding(.trailing, 10)
+                    }
+                    .disabled(!isButtonEnabled || favouriteButtonPressed)
                     
                     .popup(isPresented: $favouriteButtonPressed) {
                         PopupView(popupText: "Event added to favourites!", backgroundColor: .green)
@@ -99,7 +102,6 @@ struct EventDetailView: View {
                     })
                     .modifier(ButtonModifier())
                     .padding(.leading, 15)
-                    Spacer()
                 }
             }
         }
