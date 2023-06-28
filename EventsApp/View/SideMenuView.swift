@@ -11,7 +11,6 @@ struct SideMenuView: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     @Binding var darkMode: Bool
     @Binding var showSideMenu: Bool
-    @AppStorage("Dark/Light Mode") private var darkModeValue: Bool = false
     
     var body: some View {
         VStack {
@@ -47,24 +46,7 @@ struct SideMenuView: View {
             
             Text(loginViewModel.username)
                 .font(.system(size: 30))
-                .padding(.bottom, 50)
-            
-            Toggle(isOn: $darkMode, label: {
-                HStack {
-                    Image(systemName: "moon.fill")
-                        .frame(width: 25, height: 25)
-                        .font(.title)
-                    
-                    Text("Dark Mode")
-                        .padding(.leading, 12)
-                }
-            })
-            .onChange(of: darkMode) { _ in
-                darkModeValue = darkMode
-                if let window = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?.windows.first {
-                    window.rootViewController?.view.overrideUserInterfaceStyle = self.darkModeValue ? .dark : .light
-                }
-            }
+                .padding(.bottom, 25)
             
             NavigationLink(destination: FavouriteEventsPageView()) {
                 HStack(spacing: 22) {
@@ -83,7 +65,7 @@ struct SideMenuView: View {
             })
             .padding(.top, 25)
             
-            NavigationLink(destination: SettingsPageView()) {
+            NavigationLink(destination: SettingsPageView(darkMode: self.$darkMode)) {
                 HStack(spacing: 22) {
                     Image(systemName: "gearshape.fill")
                         .resizable()

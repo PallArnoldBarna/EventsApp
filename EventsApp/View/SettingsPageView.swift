@@ -10,9 +10,30 @@ import SwiftUI
 struct SettingsPageView: View {
     @EnvironmentObject var loginViewModel: LoginViewModel
     @State private var showAlert = false
+    @Binding var darkMode: Bool
+    @AppStorage("Dark/Light Mode") private var darkModeValue: Bool = false
     
     var body: some View {
         VStack {
+            Toggle(isOn: $darkMode, label: {
+                HStack(spacing: 22) {
+                    Image(systemName: "moon.fill")
+                        .frame(width: 40, height: 40)
+                        .font(.title)
+                    
+                    Text("Dark Mode")
+                        .foregroundColor(.primary)
+                }
+            })
+            .padding(.horizontal, 30)
+            .onChange(of: darkMode) { _ in
+                darkModeValue = darkMode
+                if let window = UIApplication.shared.connectedScenes.map({ $0 as? UIWindowScene }).compactMap({ $0 }).first?.windows.first {
+                    window.rootViewController?.view.overrideUserInterfaceStyle = self.darkModeValue ? .dark : .light
+                }
+            }
+            .padding(.vertical, 25)
+            
             NavigationLink(destination: UpdateUsernamePageView()) {
                 HStack(spacing: 22) {
                     Image(systemName: "pencil")
@@ -27,7 +48,6 @@ struct SettingsPageView: View {
                 Spacer()
             }
             .padding(.bottom, 25)
-            .padding(.top, 25)
             
             NavigationLink(destination: ChangePasswordPageView()) {
                 HStack(spacing: 22) {
@@ -67,12 +87,13 @@ struct SettingsPageView: View {
             
         .navigationBarTitle("Settings", displayMode: .inline)
         }
+        .background((self.darkMode ? (Color.black) : (Color.white)).edgesIgnoringSafeArea(.all))
         Spacer()
     }
 }
 
-struct SettingsPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsPageView()
-    }
-}
+//struct SettingsPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsPageView()
+//    }
+//}
