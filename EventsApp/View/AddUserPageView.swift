@@ -56,8 +56,7 @@ struct AddUserPageView: View {
                     self.showingPopup.toggle()
                     signupPassword = password
                     signupPasswordAgain = passwordAgain
-                    let emptyList: [Event] = []
-                    let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
+                    let user = User(username: username, userType: UserType.user)
                     addUserViewModel.createUser(email: email, password: password, user: user)
                 }, label: {
                     Text("Add new user")

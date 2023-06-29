@@ -65,9 +65,9 @@ extension String {
 }
 
 extension Date {
-    func convertToString() -> String {
+    func convertToString(dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = dateFormat
         
         return dateFormatter.string(from: self)
     }

@@ -24,7 +24,7 @@ struct FavouriteEventDetailView: View {
                 Image(uiImage: (event.image.imageFromBase64 ?? UIImage(systemName: "x.circle.fill"))!)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400, height: 400, alignment: .center)
+                    .frame(width: 410, height: 300, alignment: .center)
                     .padding(.bottom, 25)
                 HStack {
                     Text(event.name)
@@ -102,8 +102,8 @@ struct FavouriteEventDetailView: View {
         let startDate = event.startDate
         let endDate = event.endDate
         
-        startDateString = startDate.convertToString()
-        endDateString = endDate.convertToString()
+        startDateString = startDate.convertToString(dateFormat: "yyyy-MM-dd HH:mm")
+        endDateString = endDate.convertToString(dateFormat: "yyyy-MM-dd HH:mm")
     }
     
     func getCoordinate(from address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {

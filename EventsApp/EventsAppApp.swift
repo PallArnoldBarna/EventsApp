@@ -23,6 +23,7 @@ struct EventsAppApp: App {
             let addAndRemoveFavouriteEventsViewModel = AddAndRemoveFavouriteEventsViewModel()
             let getFavouriteEventsViewModel = GetFavouriteEventsViewModel()
             let modifyUserDataViewModel = ModifyUserDataViewModel()
+            let modifyAndDeleteEventViewModel = ModifyAndDeleteEventsViewModel()
             ContentView()
                 .environmentObject(loginViewModel)
                 .environmentObject(signUpViewModel)
@@ -32,6 +33,7 @@ struct EventsAppApp: App {
                 .environmentObject(addAndRemoveFavouriteEventsViewModel)
                 .environmentObject(getFavouriteEventsViewModel)
                 .environmentObject(modifyUserDataViewModel)
+                .environmentObject(modifyAndDeleteEventViewModel)
         }
     }
 }

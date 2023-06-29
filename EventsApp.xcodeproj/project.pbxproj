@@ -22,6 +22,9 @@
 		182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F754F29BE3A2100D0F751 /* SideMenuView.swift */; };
 		182F755229BE49B500D0F751 /* GeometryReaderCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */; };
 		18451DA92A4331C6002E2F98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */; };
+		185009CB2A4EDF1B00DE0BD2 /* ModifyAndDeleteEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185009CA2A4EDF1B00DE0BD2 /* ModifyAndDeleteEventsViewModel.swift */; };
+		185009CF2A4EE26500DE0BD2 /* AllEventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185009CE2A4EE26500DE0BD2 /* AllEventsListView.swift */; };
+		185009D12A4EE31D00DE0BD2 /* ModifyOrDeleteEventPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185009D02A4EE31D00DE0BD2 /* ModifyOrDeleteEventPageView.swift */; };
 		18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA02A4477EE007A3CE7 /* PopupView.swift */; };
 		18569CA32A45A45C007A3CE7 /* AddEventPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */; };
 		18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */; };
@@ -68,6 +71,9 @@
 		182F755129BE49B500D0F751 /* GeometryReaderCentered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryReaderCentered.swift; sourceTree = "<group>"; };
 		18451DA72A432C0E002E2F98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		18451DA82A4331C6002E2F98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		185009CA2A4EDF1B00DE0BD2 /* ModifyAndDeleteEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyAndDeleteEventsViewModel.swift; sourceTree = "<group>"; };
+		185009CE2A4EE26500DE0BD2 /* AllEventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsListView.swift; sourceTree = "<group>"; };
+		185009D02A4EE31D00DE0BD2 /* ModifyOrDeleteEventPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyOrDeleteEventPageView.swift; sourceTree = "<group>"; };
 		18569CA02A4477EE007A3CE7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPageView.swift; sourceTree = "<group>"; };
 		18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +211,8 @@
 				189E11072A4AE955001CBD93 /* FavouriteEventDetailView.swift */,
 				189E110B2A4B5330001CBD93 /* ChangePasswordPageView.swift */,
 				189E110D2A4B574F001CBD93 /* UpdateUsernamePageView.swift */,
+				185009CE2A4EE26500DE0BD2 /* AllEventsListView.swift */,
+				185009D02A4EE31D00DE0BD2 /* ModifyOrDeleteEventPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */,
 				189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */,
 				189E11092A4B522F001CBD93 /* ModifyUserDataViewModel.swift */,
+				185009CA2A4EDF1B00DE0BD2 /* ModifyAndDeleteEventsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,6 +370,7 @@
 				182F754E29BDFCC500D0F751 /* ButtonModifier.swift in Sources */,
 				189E110E2A4B574F001CBD93 /* UpdateUsernamePageView.swift in Sources */,
 				182F755029BE3A2100D0F751 /* SideMenuView.swift in Sources */,
+				185009D12A4EE31D00DE0BD2 /* ModifyOrDeleteEventPageView.swift in Sources */,
 				189E10FA2A4602D5001CBD93 /* ImagePicker.swift in Sources */,
 				18A6C8CA29E087D70086B535 /* SignUpViewModel.swift in Sources */,
 				189E10FC2A4757D1001CBD93 /* GetEventsViewModel.swift in Sources */,
@@ -376,6 +386,7 @@
 				18A6C8D329E1BDD30086B535 /* EventListView.swift in Sources */,
 				189E11022A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift in Sources */,
 				18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */,
+				185009CB2A4EDF1B00DE0BD2 /* ModifyAndDeleteEventsViewModel.swift in Sources */,
 				18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
 				18569CA92A45A82B007A3CE7 /* AddUserViewModel.swift in Sources */,
@@ -383,6 +394,7 @@
 				182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */,
 				182E359D29CB82A200360734 /* Event.swift in Sources */,
 				189E11062A49E175001CBD93 /* GetFavouriteEventsViewModel.swift in Sources */,
+				185009CF2A4EE26500DE0BD2 /* AllEventsListView.swift in Sources */,
 				18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */,
 				189E110A2A4B522F001CBD93 /* ModifyUserDataViewModel.swift in Sources */,
 				182E359F29CB847100360734 /* Extensions.swift in Sources */,

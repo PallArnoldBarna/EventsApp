@@ -16,12 +16,12 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
     @Published var favouriteEventNodeId: String = ""
     @Published var eventNodeId: String = ""
     
-    func addEventToFavourites(event: Event) {
+    func addEventToFavourites(event: Event, nodeId: String) {
         do {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(event)
             let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
-            ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").child(eventNodeId).setValue(jsonObject)
+            ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").child(nodeId).setValue(jsonObject)
         } catch {
             print("Error occured")
         }
@@ -36,8 +36,7 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
                 return
             }
             
-            self.eventNodeId = node.key
-            self.addEventToFavourites(event: event)
+            self.addEventToFavourites(event: event, nodeId: node.key)
         }
     }
     
@@ -50,8 +49,7 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
                 return
             }
             
-            self.favouriteEventNodeId = node.key
-            self.removeDataFromDatabase(nodeId: self.favouriteEventNodeId)
+            self.removeDataFromDatabase(nodeId: node.key)
         }
     }
     
@@ -66,15 +64,5 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
             }
         }
     }
-    
-//    func updateEvent(isFavourite: Bool, nodeId: String) {
-//        ref.child("Events").child(nodeId).updateChildValues(["isFavourite": isFavourite]) { error, _ in
-//            if let error = error {
-//                print("Failed to update data: \(error)")
-//            } else {
-//                print("Data updated successfully")
-//            }
-//        }
-//    }
     
 }

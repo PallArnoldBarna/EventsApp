@@ -146,12 +146,8 @@ struct EventListView: View {
     }
     
     var filteredEventsPrevious: [Event] {
-        let currentDate = Date()
-        
         return getEventsViewModel.events.filter {
-            let itemDay = Calendar.current.component(.day, from: $0.endDate)
-            let currentDay = Calendar.current.component(.day, from: currentDate)
-            return itemDay < currentDay
+            $0.endDate < Date()
         }
     }
     
@@ -162,12 +158,8 @@ struct EventListView: View {
     }
     
     var filteredEventsCurrent: [Event] {
-        let currentDate = Date()
-        
         return getEventsViewModel.events.filter {
-            let itemDay = Calendar.current.component(.day, from: $0.startDate)
-            let currentDay = Calendar.current.component(.day, from: currentDate)
-            return itemDay == currentDay
+            Calendar.current.isDateInToday($0.startDate)
         }
     }
     
@@ -178,12 +170,9 @@ struct EventListView: View {
     }
     
     var filteredEventsUpcoming: [Event] {
-        let currentDate = Date()
-        
         return getEventsViewModel.events.filter {
-            let itemDay = Calendar.current.component(.day, from: $0.startDate)
-            let currentDay = Calendar.current.component(.day, from: currentDate)
-            return itemDay > currentDay
+            $0.startDate > Date()
+            
         }
     }
     

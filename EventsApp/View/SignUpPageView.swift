@@ -57,8 +57,7 @@ struct SignUpPageView: View {
                     self.showingPopup.toggle()
                     signupPassword = password
                     signupPasswordAgain = passwordAgain
-                    let emptyList: [Event] = []
-                    let user = User(username: username, userType: UserType.user, favouriteEvents: emptyList)
+                    let user = User(username: username, userType: UserType.user)
                     signUpViewModel.signUp(email: email, password: password, user: user)
                 }, label: {
                     Text("Sign up")

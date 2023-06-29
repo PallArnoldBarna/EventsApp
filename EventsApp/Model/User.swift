@@ -15,5 +15,4 @@ enum UserType {
 struct User: Codable {
     var username: String
     var userType: String
-    var favouriteEvents: [Event]
 }

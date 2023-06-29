@@ -29,14 +29,15 @@ struct EventRowView: View {
             }
             Spacer()
         }
+        .frame(height: 75)
     }
     
     func convertDateToString() {
         let startDate = event.startDate
         let endDate = event.endDate
         
-        startDateString = startDate.convertToString()
-        endDateString = endDate.convertToString()
+        startDateString = startDate.convertToString(dateFormat: "yyyy-MM-dd")
+        endDateString = endDate.convertToString(dateFormat: "yyyy-MM-dd")
     }
 }
 

@@ -71,7 +71,7 @@ struct LogInPageView: View {
                         .closeOnTapOutside(true)
                 }
                 
-                NavigationLink("Don't have an account? Sing up here", destination: SignUpPageView())
+                NavigationLink("Don't have an account? Sign up here", destination: SignUpPageView())
                     .padding()
                 
             }

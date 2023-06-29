@@ -15,15 +15,6 @@ enum EventCategories {
     static let cultural: String = "Cultural"
 }
 
-enum EventFilterTypes {
-    static let all: String = "all"
-    static let conference: String = "conference"
-    static let sport: String = "sport"
-    static let festival: String = "festival"
-    static let party: String = "party"
-    static let cultural: String = "cultural"
-}
-
 struct Event: Codable {
     var name: String
     var description: String
