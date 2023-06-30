@@ -84,7 +84,7 @@ struct HomePageView: View {
                                 }
                             }
                             .onAppear{
-                                getFavouriteEventsViewModel.fetchData()
+                                getFavouriteEventsViewModel.fetchFavouriteEvents()
                             }
                         }
                         
@@ -154,9 +154,7 @@ struct HomePageView: View {
         let currentDate = Date()
         
         return getFavouriteEventsViewModel.favouriteEvents.filter {
-            let itemDay = Calendar.current.component(.day, from: $0.startDate)
-            let currentDay = Calendar.current.component(.day, from: currentDate)
-            return itemDay == currentDay
+            Calendar.current.isDateInToday($0.startDate)
         }
     }
 }

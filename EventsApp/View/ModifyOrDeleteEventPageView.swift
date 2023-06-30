@@ -28,7 +28,6 @@ struct ModifyOrDeleteEventPageView: View {
     @State private var showingPopup = false
     @State private var showAlert = false
     @Environment(\.presentationMode) var presentationMode
-    @Binding var reloadID: UUID
     
     var body: some View {
         ScrollView {
@@ -106,7 +105,6 @@ struct ModifyOrDeleteEventPageView: View {
                         let imageBase64 = selectedImage?.imageToBase64
                         let event = Event(name: name, description: description, startDate: startDate, endDate: endDate, image: imageBase64!, locationAddress: locationAddress, category: selectedCategory!)
                         self.modifyAndDeleteEventsViewModel.fetchNodeIdForEventToUpdate(event: event)
-                        reloadID = UUID()
                     }, label: {
                         Text("Update event")
                     })
@@ -158,9 +156,8 @@ struct ModifyOrDeleteEventPageView: View {
     }
 }
 
-//struct ModifyOrDeleteEventPageView_Previews: PreviewProvider {
-//    @Binding var reloadID = UUID()
-//    static var previews: some View {
-//        ModifyOrDeleteEventPageView(event: Event(name: "Test", description: "Lorem ", startDate: Date(), endDate: Date(), image: "app_icon", locationAddress: "Strada Livezeni, 41", category: "Sport"), reloadID: $reloadID)
-//    }
-//}
+struct ModifyOrDeleteEventPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        ModifyOrDeleteEventPageView(event: Event(name: "Test", description: "Lorem ", startDate: Date(), endDate: Date(), image: "app_icon", locationAddress: "Strada Livezeni, 41", category: "Sport"))
+    }
+}

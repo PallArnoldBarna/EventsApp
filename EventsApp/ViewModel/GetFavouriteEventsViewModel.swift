@@ -17,10 +17,10 @@ class GetFavouriteEventsViewModel: ObservableObject {
     @Published var favouriteEventsCount: Int = 0
     
     init() {
-        fetchData()
+        fetchFavouriteEvents()
     }
     
-    func fetchData() {
+    func fetchFavouriteEvents() {
         ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").observe(.value) { snapshot in
             var favouriteEvents: [Event] = []
             

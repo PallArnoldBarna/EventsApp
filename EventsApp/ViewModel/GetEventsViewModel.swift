@@ -16,10 +16,10 @@ class GetEventsViewModel: ObservableObject {
     @Published var events: [Event] = []
     
     init() {
-        fetchData()
+        fetchEvents()
     }
     
-    func fetchData() {
+    func fetchEvents() {
         ref.observe(.value) { snapshot in
             var events: [Event] = []
             

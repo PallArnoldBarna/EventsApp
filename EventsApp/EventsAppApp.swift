@@ -17,7 +17,6 @@ struct EventsAppApp: App {
         WindowGroup {
             let loginViewModel = LoginViewModel()
             let signUpViewModel = SignUpViewModel(loginViewModel: loginViewModel)
-            let addUserViewModel = AddUserViewModel()
             let addEventViewModel = AddEventViewModel()
             let getEventsViewModel = GetEventsViewModel()
             let addAndRemoveFavouriteEventsViewModel = AddAndRemoveFavouriteEventsViewModel()
@@ -27,7 +26,6 @@ struct EventsAppApp: App {
             ContentView()
                 .environmentObject(loginViewModel)
                 .environmentObject(signUpViewModel)
-                .environmentObject(addUserViewModel)
                 .environmentObject(addEventViewModel)
                 .environmentObject(getEventsViewModel)
                 .environmentObject(addAndRemoveFavouriteEventsViewModel)

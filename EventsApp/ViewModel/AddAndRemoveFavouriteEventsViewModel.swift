@@ -16,17 +16,6 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
     @Published var favouriteEventNodeId: String = ""
     @Published var eventNodeId: String = ""
     
-    func addEventToFavourites(event: Event, nodeId: String) {
-        do {
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(event)
-            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
-            ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").child(nodeId).setValue(jsonObject)
-        } catch {
-            print("Error occured")
-        }
-    }
-    
     func fetchNodeIdForEvent(event: Event) {
         let query = ref.child("Events").queryOrdered(byChild: "name").queryEqual(toValue: event.name)
         
@@ -40,6 +29,17 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
         }
     }
     
+    func addEventToFavourites(event: Event, nodeId: String) {
+        do {
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try jsonEncoder.encode(event)
+            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String:Any]
+            ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").child(nodeId).setValue(jsonObject)
+        } catch {
+            print("Error occured")
+        }
+    }
+    
     func fetchNodeIdForFavouriteEvent(event: Event) {
         let query = ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").queryOrdered(byChild: "name").queryEqual(toValue: event.name)
         
@@ -49,11 +49,11 @@ class AddAndRemoveFavouriteEventsViewModel: ObservableObject {
                 return
             }
             
-            self.removeDataFromDatabase(nodeId: node.key)
+            self.removeEventFromFavourites(nodeId: node.key)
         }
     }
     
-    func removeDataFromDatabase(nodeId: String) {
+    func removeEventFromFavourites(nodeId: String) {
         let nodeRef = ref.child("Users").child(auth.currentUser?.uid ?? "Undefined").child("FavouriteEvents").child(nodeId)
         
         nodeRef.removeValue { error, _ in

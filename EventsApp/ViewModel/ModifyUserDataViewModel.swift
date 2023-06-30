@@ -21,11 +21,11 @@ class ModifyUserDataViewModel: ObservableObject {
         let credential = EmailAuthProvider.credential(withEmail: currentUser.email!, password: currentPassword)
         
         currentUser.reauthenticate(with: credential) { _, error in
-            if let error = error {
+            if error != nil {
                 print("Failed to reauthenticate!")
             } else {
                 currentUser.updatePassword(to: newPassword) { error in
-                    if let error = error {
+                    if error != nil {
                         print("Failed to update password!")
                     }
                 }

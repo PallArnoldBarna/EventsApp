@@ -9,12 +9,11 @@ import SwiftUI
 
 struct AllEventsListView: View {
     @EnvironmentObject var getEventsViewModel: GetEventsViewModel
-    @State private var reloadID = UUID()
     
     var body: some View {
         List(getEventsViewModel.events, id: \.name) { event in
             ZStack {
-                NavigationLink(destination: ModifyOrDeleteEventPageView(event: event, reloadID: $reloadID)) {
+                NavigationLink(destination: ModifyOrDeleteEventPageView(event: event)) {
                     EmptyView()
                 }
                 .opacity(0.0)
@@ -25,7 +24,7 @@ struct AllEventsListView: View {
         }
         .listStyle(.inset)
         .onAppear {
-            getEventsViewModel.fetchData()
+            getEventsViewModel.fetchEvents()
         }
     }
 }

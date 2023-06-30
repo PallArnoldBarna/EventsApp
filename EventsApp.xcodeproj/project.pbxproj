@@ -28,8 +28,6 @@
 		18569CA12A4477EE007A3CE7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA02A4477EE007A3CE7 /* PopupView.swift */; };
 		18569CA32A45A45C007A3CE7 /* AddEventPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */; };
 		18569CA52A45A4CF007A3CE7 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */; };
-		18569CA72A45A818007A3CE7 /* AddUserPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA62A45A818007A3CE7 /* AddUserPageView.swift */; };
-		18569CA92A45A82B007A3CE7 /* AddUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */; };
 		186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */; };
 		189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B29B929C78D8200EA95F9 /* SettingsPageView.swift */; };
 		189E10FA2A4602D5001CBD93 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E10F92A4602D5001CBD93 /* ImagePicker.swift */; };
@@ -77,8 +75,6 @@
 		18569CA02A4477EE007A3CE7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPageView.swift; sourceTree = "<group>"; };
 		18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
-		18569CA62A45A818007A3CE7 /* AddUserPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserPageView.swift; sourceTree = "<group>"; };
-		18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewModel.swift; sourceTree = "<group>"; };
 		186CA18B29C8CD6000FC20C5 /* FavouriteEventsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEventsPageView.swift; sourceTree = "<group>"; };
 		189B29B929C78D8200EA95F9 /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 		189E10F92A4602D5001CBD93 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -205,7 +201,6 @@
 				18A6C8D229E1BDD30086B535 /* EventListView.swift */,
 				18569CA02A4477EE007A3CE7 /* PopupView.swift */,
 				18569CA22A45A45C007A3CE7 /* AddEventPageView.swift */,
-				18569CA62A45A818007A3CE7 /* AddUserPageView.swift */,
 				189E10FD2A4758BF001CBD93 /* EventRowView.swift */,
 				189E10FF2A4763BD001CBD93 /* EventDetailView.swift */,
 				189E11072A4AE955001CBD93 /* FavouriteEventDetailView.swift */,
@@ -223,7 +218,6 @@
 				18A6C8C729E087C30086B535 /* LoginViewModel.swift */,
 				18A6C8C929E087D70086B535 /* SignUpViewModel.swift */,
 				18569CA42A45A4CF007A3CE7 /* AddEventViewModel.swift */,
-				18569CA82A45A82B007A3CE7 /* AddUserViewModel.swift */,
 				189E10FB2A4757D1001CBD93 /* GetEventsViewModel.swift */,
 				189E11012A49DEC2001CBD93 /* AddAndRemoveFavouriteEventsViewModel.swift */,
 				189E11052A49E175001CBD93 /* GetFavouriteEventsViewModel.swift */,
@@ -377,7 +371,6 @@
 				182E35A129CB884700360734 /* CardView.swift in Sources */,
 				189E10FE2A4758BF001CBD93 /* EventRowView.swift in Sources */,
 				189B29BA29C78D8200EA95F9 /* SettingsPageView.swift in Sources */,
-				18569CA72A45A818007A3CE7 /* AddUserPageView.swift in Sources */,
 				186CA18C29C8CD6000FC20C5 /* FavouriteEventsPageView.swift in Sources */,
 				182F754629BD02D700D0F751 /* LogInPageView.swift in Sources */,
 				189E110C2A4B5330001CBD93 /* ChangePasswordPageView.swift in Sources */,
@@ -389,7 +382,6 @@
 				185009CB2A4EDF1B00DE0BD2 /* ModifyAndDeleteEventsViewModel.swift in Sources */,
 				18A6C8C829E087C30086B535 /* LoginViewModel.swift in Sources */,
 				182F753A29BB881200D0F751 /* ContentView.swift in Sources */,
-				18569CA92A45A82B007A3CE7 /* AddUserViewModel.swift in Sources */,
 				182F754C29BD03E000D0F751 /* HomePageView.swift in Sources */,
 				182F753829BB881200D0F751 /* EventsAppApp.swift in Sources */,
 				182E359D29CB82A200360734 /* Event.swift in Sources */,

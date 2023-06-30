@@ -32,7 +32,7 @@ struct FavouriteEventsPageView: View {
         }
         .navigationBarTitle("Favourite events", displayMode: .inline)
         .onAppear{
-            getFavouriteEventsViewModel.fetchData()
+            getFavouriteEventsViewModel.fetchFavouriteEvents()
         }
     }
 }
